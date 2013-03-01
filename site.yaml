@@ -22,7 +22,7 @@ context:
             url: "http://merlin.rebrovic.net"
         layout:
             name: Hyde Starter Kit
-            url: "https://github.com/merlinrebrovic/hyde-starter-kit"
+            url: "https://github.com/ahwillia/ahwillia.github.com"
         project:
             name: Hyde
             url: "http://hyde.github.com"
