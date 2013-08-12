@@ -91,8 +91,8 @@ plot(x,f ./ norm(f),<span class="string">'-b'</span>)
 plot(x,sta ./ norm(sta),<span class="string">'-r'</span>)
 xlabel(<span class="string">'spatial dimension'</span>)
 ylabel(<span class="string">'stimulus intensity'</span>)
-legend(<span class="string">'Edge Filter (f)'</span>,<span class="string">'Spike-Triggered Average'</span>)
-</pre><img vspace="5" hspace="5" src="problem3a_alex_02.png" alt=""> <h2>Estimate the firing rate using Bayes theorem and the STA<a name="6"></a></h2><p>spk_prior is p(spk); stim_prior is p(s*f); likli is p(s*f | spk)</p><pre class="codeinput"><span class="comment">% spk_prior is the same as the overall mean firing rate.</span>
+legend(<span class="string">'Edge Filter (f)'</span>,<span class="string">'Spike-Triggered Average'</span>,<span class="string">'location'</span>,<span class="string">'NorthWest'</span>)
+</pre><img vspace="5" hspace="5" src="problem3a_alex_02.png" alt=""> <h2>Estimate the firing rate using Bayes theorem and the STA<a name="6"></a></h2><p>Variable definitions: "spk_prior" is <img src="problem3a_alex_eq86948.png" alt="$p(spike)$">, "stim_prior" is <img src="problem3a_alex_eq13073.png" alt="$p(\vec{s}(t)\cdot\vec{f})$">, "likli" is <img src="problem3a_alex_eq60799.png" alt="$p(\vec{s}(t)\cdot\vec{f} | spike)$"></p><pre class="codeinput"><span class="comment">% spk_prior is the same as the overall mean firing rate.</span>
 spk_prior  = mean(r);
 
 <span class="comment">% stim_prior is a histogram of the projections of s(:,t) onto the sta.</span>
@@ -111,7 +111,7 @@ likli = @(x) sum(proj_spk&lt;=(x+proj_bin_size) &amp; proj_spk&gt;=(x-proj_bin_s
 r_est = @(x) likli(x).*spk_prior./stim_prior(x);
 
 <span class="keyword">for</span> aa = 1:100
-  r_est_100(aa) = r_est(sta*s(:,aa));
+  r_est_100(aa) = r_est(sta*s(:,aa)); <span class="comment">%#ok&lt;SAGROW&gt;</span>
 <span class="keyword">end</span>
 
 <span class="comment">% Compare predicted to actual firing rate</span>
@@ -128,13 +128,13 @@ title(<span class="string">'stimulus (first 100 time points)'</span>)
 </pre><img vspace="5" hspace="5" src="problem3a_alex_03.png" alt=""> <h2>Compare predicted and actual non-linearity<a name="7"></a></h2><pre class="codeinput">figure; hold <span class="string">on</span>
 proj_levels = linspace(min(min(f*s)),max(max(f*s)),100);
 <span class="keyword">for</span> aa = 1:length(proj_levels)
-  r_est_100(aa) = r_est(proj_levels(aa));
+  r_est_100(aa) = r_est(proj_levels(aa)); <span class="comment">%#ok&lt;SAGROW&gt;</span>
 <span class="keyword">end</span>
 plot(f*s,(r-min(r))./range(r),<span class="string">'.b'</span>)
 plot(proj_levels,(r_est_100-min(r_est_100))./range(r_est_100),<span class="string">'-r'</span>)
 xlabel(<span class="string">'Projection onto stimulus filter'</span>)
 ylabel(<span class="string">'firing rate'</span>)
-legend(<span class="string">'actual'</span>,<span class="string">'estimated'</span>)
+legend(<span class="string">'actual'</span>,<span class="string">'estimated'</span>,<span class="string">'location'</span>,<span class="string">'NorthWest'</span>)
 </pre><img vspace="5" hspace="5" src="problem3a_alex_04.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 clear; close all; clc;
@@ -173,10 +173,13 @@ plot(x,f ./ norm(f),'-b')
 plot(x,sta ./ norm(sta),'-r')
 xlabel('spatial dimension')
 ylabel('stimulus intensity')
-legend('Edge Filter (f)','Spike-Triggered Average')
+legend('Edge Filter (f)','Spike-Triggered Average','location','NorthWest')
 
 %% Estimate the firing rate using Bayes theorem and the STA
-% spk_prior is p(spk); stim_prior is p(s*f); likli is p(s*f | spk)
+% Variable definitions: 
+% "spk_prior" is $p(spike)$,  
+% "stim_prior" is $p(\vec{s}(t)\cdot\vec{f})$,
+% "likli" is $p(\vec{s}(t)\cdot\vec{f} | spike)$
 
 % spk_prior is the same as the overall mean firing rate.
 spk_prior  = mean(r);
@@ -197,7 +200,7 @@ likli = @(x) sum(proj_spk<=(x+proj_bin_size) & proj_spk>=(x-proj_bin_size))./siz
 r_est = @(x) likli(x).*spk_prior./stim_prior(x);
 
 for aa = 1:100
-  r_est_100(aa) = r_est(sta*s(:,aa));
+  r_est_100(aa) = r_est(sta*s(:,aa)); %#ok<SAGROW>
 end
 
 % Compare predicted to actual firing rate
@@ -216,13 +219,13 @@ title('stimulus (first 100 time points)')
 figure; hold on
 proj_levels = linspace(min(min(f*s)),max(max(f*s)),100);
 for aa = 1:length(proj_levels)
-  r_est_100(aa) = r_est(proj_levels(aa));
+  r_est_100(aa) = r_est(proj_levels(aa)); %#ok<SAGROW>
 end
 plot(f*s,(r-min(r))./range(r),'.b')
 plot(proj_levels,(r_est_100-min(r_est_100))./range(r_est_100),'-r')
 xlabel('Projection onto stimulus filter')
 ylabel('firing rate')
-legend('actual','estimated')
+legend('actual','estimated','location','NorthWest')
 
 ##### SOURCE END #####
 --></body></html>
