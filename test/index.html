@@ -35,7 +35,7 @@ d3.json("eve_center_graph.json", function(error, graph) {
   force
       .nodes(graph.nodes)
       .links(graph.links)
-      .gravity(0.3)
+      .gravity(0.5)
       .start();
 
   var link = svg.selectAll(".link")
