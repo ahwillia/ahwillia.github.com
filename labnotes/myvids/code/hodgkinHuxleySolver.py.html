@@ -1,0 +1,185 @@
+<link href="txtstyle.css" rel="stylesheet" type="text/css" />
+<pre>
+#!/usr/bin/env ipython
+
+import sys
+import numpy as np
+import pylab as sp
+from injectCurrent import specifyCurrent
+from HHequations import *
+
+def solveHHNumerical(I_inj,gmax,t):
+	"""Numerically solves for V(t) using the numerical procedure
+	outlined in Dayan and Abbott's "Theoretical Neuroscience".
+	
+	Inputs:
+		I_inj: [nx1 array/vector] holds the amount of injected current
+		         at each time point in the simulation. [nA]
+		gmax:  [3x1 array] specifies the maximal conductances of the
+		         ionic currents in the HH model (in order: Na, K, Leak).
+		         The conductances are normalized to unit capacitance,
+		         (i.e. uS/nF) so that the parameter C can be ignored.
+		t:     [nx1 array/vector] holds the time of each sample in the
+		         simulation. For example, if the time step ("dt") was
+		         equal to 0.02, and the length of the simulation was 3,
+		         then t = [0, 0.02, 0.04, ... , 3.96, 3.98].
+	Returns:
+		V:     [nx1 array/vector] holds the membrane potential at each
+		         time point or sample.
+	"""
+	## NOTE: These reversal potentials are not comparable to what is
+	##       used in contemporary conductance-based models. They are
+	##       kept at their original values for historical accuracy only.
+	El  = 10.6    # Leak reversal/equilibrium potential (-10.6 mV)
+	Ek  = -12     # Potassium reversal/equilibrium potential (-12 mV)
+	Ena = 115     # Sodium reversal/equilibrium potential (115 mV)
+	
+	V = np.zeros(len(t))
+	m = np.zeros(len(t))
+	h = np.zeros(len(t))
+	n = np.zeros(len(t))
+	V[0] = 0          # Initial membrane potential (mV)
+	m[0] = m_ss(V[0]) # Initial sodium activation
+	h[0] = h_ss(V[0]) # Initial sodium inactivation
+	n[0] = n_ss(V[0]) # Initial potassium activation
+	
+	dt = t[1]-t[0]
+	for i in range(0,len(V)-1):
+		# Update gating variables
+		m[i+1] = m_ss(V[i]) - (m_ss(V[i]) - m[i])*np.exp(-dt/m_tau(V[i]))
+		h[i+1] = h_ss(V[i]) - (h_ss(V[i]) - h[i])*np.exp(-dt/h_tau(V[i]))
+		n[i+1] = n_ss(V[i]) - (n_ss(V[i]) - n[i])*np.exp(-dt/n_tau(V[i]))
+		
+		# Update membrane potential
+		gna = gmax[0]*(m[i]**3)*h[i];
+		gk = gmax[1]*(n[i]**4);
+		gTotal = gna + gk + gmax[2];
+		V_ss = (gna*Ena + gk*Ek + gmax[2]*El + I_inj[i])/gTotal
+		V_tau = 1/gTotal # Remember conductances are normalized to C
+		V[i+1] = V_ss - (V_ss - V[i])*np.exp(-dt/V_tau)
+	return (V,m,h,n)
+
+if __name__ == '__main__':
+	"""Numerically solve V(t) for a passive membrane
+	
+	Arugments:
+		1) Integer number 1-4 specifying the type of current injection
+			{1 = 'current step'; 2 = 'sine wave'; 3 = 'white noise';
+			 4 = 'pink noise'}... Default is 'pink noise'
+		2) Float corresponding to the amplitude of the current injection
+		    (in nano-Amps)... Default is 5.0
+		3) Float corresponding to the sodium maximal conductance in
+		   [uS/nF] (normalized to unit capacitance) ... Default is 120.0 
+		4) Float corresponding to the potassium maximal conductance in
+		   [uS/nF] ... Default is 36.0
+		5) Float corresponding to the leak conductance [uS/nF] ...
+		   Default is 0.3 
+	
+	Other parameters (e.g. the frequency of the sine wave) cannot be
+	changed from the command-line. You will need to alter the code
+	itself. (Sorry!)
+	
+	Examples (from Bash command-line)
+	---------------------------------
+	Run simulation with default parameters
+		./hodgkinHuxleySolver.py
+	A current step of 3 nA, with a input resistance of 10 MOhms
+		./hodgkinHuxleySolver.py 1 3 120 36 0.3
+	A sinusoidal wave with an amplitude of 6 nA, R = 8 MOhms
+		./hodgkinHuxleySolver.py 2 6 120 36 0.3
+	White noise with an amplitude of 30 nA, R = 10 MOhms
+		./hodgkinHuxleySolver.py 3 30 120 36 0.3
+	Pink noise with an amplitude of 30 nA, R = 10 MOhms
+		./hodgkinHuxleySolver.py 3 30 120 36 0.3
+	"""
+	tDel = 0.02  # Delay before injecting current (ms)
+	tMax = 7e2  # Simulation Length (ms)
+	dt = 0.02   # Time step of integration
+	gmax = np.zeros(3)
+	
+	# Parse inputs
+	if len(sys.argv) == 6:
+		currAmp = float(sys.argv[2])
+		gmax[0] = float(sys.argv[3]) # sodium maximal conductance
+		gmax[1] = float(sys.argv[4]) # potassium maximal conductance
+		gmax[2] = float(sys.argv[5]) # leak conductance
+		if sys.argv[1] == '1':
+			currType = 'currentStep'
+			tDel = 150
+		elif sys.argv[1] == '2':
+			currType = 'sine'
+		elif sys.argv[1] == '3':
+			currType = 'white'
+		else:
+			currType = 'pink'
+	else:
+		print 'Inputs to hodgkinHuxleySolver are not correct...'
+		print 'Resorting to default parameters...'
+		tDel = 150
+		currType = 'currentStep'
+		currAmp = 10     # [units = nA]
+		gmax[0] = 120.0  # sodium maximal conductance
+		gmax[1] = 36.0   # potassium maximal conductance
+		gmax[2] = 0.3    # leak conductance
+	
+	# Construct injected current and then solve for V(t)
+	I_inj = specifyCurrent(tDel,tMax,dt,currType,currAmp)
+	t = np.arange(0,tMax,dt)
+	tup = solveHHNumerical(I_inj,gmax,t) # tup is the tuple
+	V = tup[0]
+	m = tup[1]
+	h = tup[2]
+	n = tup[3]
+	
+	# Plot Results
+	sp.figure()
+	sp.subplot(2,2,1)
+	sp.plot(t/1e3,V,'-b')
+	Vrange = np.max(V)-np.min(V)
+	sp.ylim([np.min(V)-(Vrange/2), np.max(V)+(Vrange/2)])
+	sp.ylabel('Membrane Potential (mV)')
+	
+	sp.subplot(2,2,2)
+	Vf = np.fft.fftshift(abs(np.fft.fft(V)**2)) # Fourier Transform
+	Vf = Vf[(1+len(Vf)/2):]                     # Frequencies > 0
+	sp.plot(Vf[1:150],'-b')
+	sp.ylabel('Power - Membrane Potential')
+	
+	sp.subplot(2,2,3)
+	sp.plot(t/1e3,I_inj,'-r')
+	Irange = np.max(I_inj)-np.min(I_inj)
+	sp.ylim([np.min(I_inj)-(Irange/2), np.max(I_inj)+(Irange/2)])
+	sp.ylabel('Injected Current (nA)')
+	sp.xlabel('time (s)')
+	
+	sp.subplot(2,2,4)
+	If = np.fft.fftshift(abs(np.fft.fft(I_inj)**2)) # Fourier Transform
+	If = If[(1+len(If)/2):]                         # Frequencies > 0
+	sp.plot(If[1:150],'-r')
+	sp.ylabel('Power - Injected Current')
+	sp.xlabel('Frequencies')
+	
+	Vsc = (V-np.min(V))/Vrange
+	sp.figure()
+	sp.plot(t/1e3,Vsc,':k')
+	sp.plot(t/1e3,m**3,'-b')
+	sp.xlabel('time')
+	sp.ylabel('Na activation & Vm')
+	sp.title('Sodium activation')
+	
+	sp.figure()
+	sp.plot(t/1e3,Vsc,':k')
+	sp.plot(t/1e3,h,'-r')
+	sp.xlabel('time')
+	sp.ylabel('Na inactivation & Vm')
+	sp.title('Sodium inactivation')
+	
+	sp.figure()
+	sp.plot(t/1e3,Vsc,':k')
+	sp.plot(t/1e3,n**4,'-g')
+	sp.xlabel('time')
+	sp.ylabel('K activation & Vm')
+	sp.title('Potassium activation')
+	
+	sp.show()
+</pre>

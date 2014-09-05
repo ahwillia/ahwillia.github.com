@@ -1,0 +1,231 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>problem3a_alex</title><meta name="generator" content="MATLAB 8.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2013-08-11"><meta name="DC.source" content="problem3a_alex.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Generate white noise stimulus:</a></li><li><a href="#3">Define Edge Filter</a></li><li><a href="#4">Compute the firing rate, stimulus projection, and some Poisson spikes</a></li><li><a href="#5">Compute the STA.</a></li><li><a href="#6">Estimate the firing rate using Bayes theorem and the STA</a></li><li><a href="#7">Compare predicted and actual non-linearity</a></li></ul></div><pre class="codeinput">clear; close <span class="string">all</span>; clc;
+</pre><h2>Generate white noise stimulus:<a name="2"></a></h2><pre class="codeinput">p = 25;      <span class="comment">% spatial dimensions</span>
+T = 5e5;     <span class="comment">% number of time points</span>
+x = linspace(-0.5,0.5,p); <span class="comment">% spatial axis</span>
+s = randn(p,T);
+</pre><h2>Define Edge Filter<a name="3"></a></h2><pre class="codeinput">a = 5;  b = 0.02;
+f = a*(x.^3) .* exp(-x.^2/b);
+</pre><h2>Compute the firing rate, stimulus projection, and some Poisson spikes<a name="4"></a></h2><pre class="codeinput">theta = 0.025;  D = 0.05;  r0 = 1;
+r = r0.*(1+exp( (theta-f*s)./D) ).^-1; <span class="comment">% instantaneous firing rate</span>
+spk = poissrnd(r);                     <span class="comment">% generate Poisson spikes</span>
+figure;
+subplot(2,1,1)
+plot(r(1:100))
+title(<span class="string">'firing rate (first 100 time points)'</span>)
+subplot(2,1,2)
+imagesc(s(:,1:100))
+colormap <span class="string">bone</span>
+title(<span class="string">'stimulus (first 100 time points)'</span>)
+</pre><img vspace="5" hspace="5" src="problem3a_alex_01.png" alt=""> <h2>Compute the STA.<a name="5"></a></h2><p>Stimuli that invoked multiple spikes are counted multiple times (i.e. the sta is a weighted average).</p><pre class="codeinput">pspk = sum(spk)./length(spk);  <span class="comment">% probability of having a spike in any time window</span>
+s_spk = [s(:,spk&gt;0), s(:,spk&gt;1), s(:,spk&gt;2), s(:,spk&gt;3), s(:,spk&gt;4)];
+sta = mean(s_spk,2)';     <span class="comment">% average all stimuli that coincided with spikes</span>
+figure; hold <span class="string">on</span>
+plot(x,f ./ norm(f),<span class="string">'-b'</span>)
+plot(x,sta ./ norm(sta),<span class="string">'-r'</span>)
+xlabel(<span class="string">'spatial dimension'</span>)
+ylabel(<span class="string">'stimulus intensity'</span>)
+legend(<span class="string">'Edge Filter (f)'</span>,<span class="string">'Spike-Triggered Average'</span>,<span class="string">'location'</span>,<span class="string">'NorthWest'</span>)
+</pre><img vspace="5" hspace="5" src="problem3a_alex_02.png" alt=""> <h2>Estimate the firing rate using Bayes theorem and the STA<a name="6"></a></h2><p>Variable definitions: "spk_prior" is <img src="problem3a_alex_eq86948.png" alt="$p(spike)$">, "stim_prior" is <img src="problem3a_alex_eq13073.png" alt="$p(\vec{s}(t)\cdot\vec{f})$">, "likli" is <img src="problem3a_alex_eq60799.png" alt="$p(\vec{s}(t)\cdot\vec{f} | spike)$"></p><pre class="codeinput"><span class="comment">% spk_prior is the same as the overall mean firing rate.</span>
+spk_prior  = mean(r);
+
+<span class="comment">% stim_prior is a histogram of the projections of s(:,t) onto the sta.</span>
+<span class="comment">% Remember that the sta is our estimate of f.</span>
+proj = sta*s;
+proj_bin_size = range(proj)./1e2;
+stim_prior = @(x) sum(proj&lt;=(x+proj_bin_size) &amp; proj&gt;=(x-proj_bin_size))./T;
+
+<span class="comment">% The liklihood function is similar to the stimulus prior, but selects out</span>
+<span class="comment">% stimuli that actually elicited one or more spikes.</span>
+proj_spk = sta*s_spk;
+likli = @(x) sum(proj_spk&lt;=(x+proj_bin_size) &amp; proj_spk&gt;=(x-proj_bin_size))./size(s_spk,2);
+
+<span class="comment">% Non-linear function r_est(s*f) relates the projected stimulus into an</span>
+<span class="comment">% estimated firing rate by Bayes Theorem:</span>
+r_est = @(x) likli(x).*spk_prior./stim_prior(x);
+
+<span class="keyword">for</span> aa = 1:100
+  r_est_100(aa) = r_est(sta*s(:,aa)); <span class="comment">%#ok&lt;SAGROW&gt;</span>
+<span class="keyword">end</span>
+
+<span class="comment">% Compare predicted to actual firing rate</span>
+figure;
+subplot(2,1,1); hold <span class="string">on</span>
+plot(r(1:100),<span class="string">'-b'</span>)
+plot(r_est_100,<span class="string">'-r'</span>)
+legend(<span class="string">'actual firing rate'</span>,<span class="string">'p(spike|s*f)'</span>)
+title(<span class="string">'firing rate (first 100 time points)'</span>)
+subplot(2,1,2)
+imagesc(s(:,1:100))
+colormap <span class="string">bone</span>
+title(<span class="string">'stimulus (first 100 time points)'</span>)
+</pre><img vspace="5" hspace="5" src="problem3a_alex_03.png" alt=""> <h2>Compare predicted and actual non-linearity<a name="7"></a></h2><pre class="codeinput">figure; hold <span class="string">on</span>
+proj_levels = linspace(min(min(f*s)),max(max(f*s)),100);
+<span class="keyword">for</span> aa = 1:length(proj_levels)
+  r_est_100(aa) = r_est(proj_levels(aa)); <span class="comment">%#ok&lt;SAGROW&gt;</span>
+<span class="keyword">end</span>
+plot(f*s,(r-min(r))./range(r),<span class="string">'.b'</span>)
+plot(proj_levels,(r_est_100-min(r_est_100))./range(r_est_100),<span class="string">'-r'</span>)
+xlabel(<span class="string">'Projection onto stimulus filter'</span>)
+ylabel(<span class="string">'firing rate'</span>)
+legend(<span class="string">'actual'</span>,<span class="string">'estimated'</span>,<span class="string">'location'</span>,<span class="string">'NorthWest'</span>)
+</pre><img vspace="5" hspace="5" src="problem3a_alex_04.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2013a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clear; close all; clc;
+
+%% Generate white noise stimulus:
+p = 25;      % spatial dimensions
+T = 5e5;     % number of time points
+x = linspace(-0.5,0.5,p); % spatial axis
+s = randn(p,T);
+
+%% Define Edge Filter
+a = 5;  b = 0.02;
+f = a*(x.^3) .* exp(-x.^2/b);
+
+%% Compute the firing rate, stimulus projection, and some Poisson spikes
+theta = 0.025;  D = 0.05;  r0 = 1;
+r = r0.*(1+exp( (theta-f*s)./D) ).^-1; % instantaneous firing rate
+spk = poissrnd(r);                     % generate Poisson spikes 
+figure;
+subplot(2,1,1)
+plot(r(1:100))
+title('firing rate (first 100 time points)')
+subplot(2,1,2)
+imagesc(s(:,1:100))
+colormap bone
+title('stimulus (first 100 time points)')
+
+%% Compute the STA.
+% Stimuli that invoked multiple spikes are counted multiple times (i.e. the
+% sta is a weighted average).
+pspk = sum(spk)./length(spk);  % probability of having a spike in any time window
+s_spk = [s(:,spk>0), s(:,spk>1), s(:,spk>2), s(:,spk>3), s(:,spk>4)];
+sta = mean(s_spk,2)';     % average all stimuli that coincided with spikes
+figure; hold on
+plot(x,f ./ norm(f),'-b')
+plot(x,sta ./ norm(sta),'-r')
+xlabel('spatial dimension')
+ylabel('stimulus intensity')
+legend('Edge Filter (f)','Spike-Triggered Average','location','NorthWest')
+
+%% Estimate the firing rate using Bayes theorem and the STA
+% Variable definitions: 
+% "spk_prior" is $p(spike)$,  
+% "stim_prior" is $p(\vec{s}(t)\cdot\vec{f})$,
+% "likli" is $p(\vec{s}(t)\cdot\vec{f} | spike)$
+
+% spk_prior is the same as the overall mean firing rate.
+spk_prior  = mean(r);
+
+% stim_prior is a histogram of the projections of s(:,t) onto the sta.
+% Remember that the sta is our estimate of f.
+proj = sta*s;
+proj_bin_size = range(proj)./1e2;
+stim_prior = @(x) sum(proj<=(x+proj_bin_size) & proj>=(x-proj_bin_size))./T;
+
+% The liklihood function is similar to the stimulus prior, but selects out
+% stimuli that actually elicited one or more spikes.
+proj_spk = sta*s_spk; 
+likli = @(x) sum(proj_spk<=(x+proj_bin_size) & proj_spk>=(x-proj_bin_size))./size(s_spk,2);
+
+% Non-linear function r_est(s*f) relates the projected stimulus into an
+% estimated firing rate by Bayes Theorem:
+r_est = @(x) likli(x).*spk_prior./stim_prior(x);
+
+for aa = 1:100
+  r_est_100(aa) = r_est(sta*s(:,aa)); %#ok<SAGROW>
+end
+
+% Compare predicted to actual firing rate
+figure;
+subplot(2,1,1); hold on
+plot(r(1:100),'-b')
+plot(r_est_100,'-r')
+legend('actual firing rate','p(spike|s*f)')
+title('firing rate (first 100 time points)')
+subplot(2,1,2)
+imagesc(s(:,1:100))
+colormap bone
+title('stimulus (first 100 time points)')
+
+%% Compare predicted and actual non-linearity
+figure; hold on
+proj_levels = linspace(min(min(f*s)),max(max(f*s)),100);
+for aa = 1:length(proj_levels)
+  r_est_100(aa) = r_est(proj_levels(aa)); %#ok<SAGROW>
+end
+plot(f*s,(r-min(r))./range(r),'.b')
+plot(proj_levels,(r_est_100-min(r_est_100))./range(r_est_100),'-r')
+xlabel('Projection onto stimulus filter')
+ylabel('firing rate')
+legend('actual','estimated','location','NorthWest')
+
+##### SOURCE END #####
+--></body></html>

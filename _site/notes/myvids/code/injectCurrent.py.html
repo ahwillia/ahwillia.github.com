@@ -1,0 +1,58 @@
+<link href="txtstyle.css" rel="stylesheet" type="text/css" />
+<pre>
+import numpy as np
+
+def specifyCurrent(tDel,tMax,dt,currType,currAmp):
+	"""Constructs I_inj, the vector/array specifying the injected
+	current.
+	
+	Inputs:
+		tDel:     [float] the delay (in ms) before current begins
+		            to be injected.
+		tMax:     [float] the length of the simulation (in ms)
+		dt:       [float] the time between samples. That is, the 
+		            integration time step.
+		currType: [string] Specifies the kind of current injection
+		            protocol we are using.
+		currAmp:  [float] Scales the amplitude of the current injection.
+		            Larger amplitudes 
+		
+	Returns:
+		I_inj: [1xn array/vector] holds the amount of injected current
+		         in nano-Amps at each time point.
+	"""
+	
+	## Construct the current injection (part after the 'delay')
+	t_curr = np.arange(0,tMax-tDel,dt) # time pts for current inj
+	if currType == 'currentStep':
+		activeCurr = np.ones(len(t_curr)) * currAmp
+	elif currType == 'sine':
+		f = 40/1e3   # frequency of sine wave
+		activeCurr = currAmp * 0.5 * np.sin(2*np.pi*f*t_curr)
+	elif currType == 'white':
+		wn = np.random.randn(len(t_curr))
+		wn = currAmp*(wn/(np.max(wn) - np.min(wn)))
+		activeCurr = wn
+	elif currType == 'pink':
+		# Note: this isn't strictly pink noise. True pink noise would
+		# divide the white noise FFT by the sqrt of the frequency. But 
+		# scientists often use the term 'pink noise' loosely anyway (as
+		# far as I can tell).
+		t = np.arange(dt,tMax-tDel,dt)
+		n = len(t_curr)
+		wn = np.random.randn(n)     # white noise trace
+		wn_F = np.fft.fft(wn,n)     # Fourier Transform of white noise
+		freq = np.fft.fftfreq(n)    # Frequencies for wn_F
+		freq[0] = 1                 # Avoid divide by zero
+		pn_F = wn_F/(abs(freq)**0.7) # Pink noise has 1/F power spec.
+		pn_F[0] = 0                  # ignore divide by zero
+		pn = np.real(np.fft.ifft(pn_F))
+		pn = currAmp*(pn/(np.max(pn) - np.min(pn)))
+		activeCurr = pn
+
+	## Put the current injection in after the initial "delay"
+	I_inj = np.zeros(round(tMax/dt)) # vector of injected current
+	start = len(I_inj)-len(t_curr)
+	I_inj[start:] = activeCurr
+	return I_inj
+</pre>
