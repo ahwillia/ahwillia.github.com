@@ -1,0 +1,61 @@
+/* file custom.css for the theme CleanNotebook */
+div#notebook { /* centers the page content */
+padding-left:20%;
+padding-right:20%;
+}
+ 
+div.cell { /* Tunes the space between cells */
+margin-top:1em;
+margin-bottom:1em;
+width:950px;
+}
+ 
+div.text_cell_render h1 { /* Main titles bigger, centered */
+font-size: 2.2em;
+line-height:1.4em;
+text-align:center;
+}
+ 
+div.text_cell_render h2 { /*  Parts names nearer from text */
+margin-bottom: -0.4em;
+}
+ 
+div.MathJax_Display {
+padding:1em 0;
+}
+ 
+div.text_cell_render { /* Customize text cells */
+font-family: 'Times New Roman';
+font-size:1.2em;
+line-height:1.4em;
+width:750px;
+}
+
+li {
+    line-height: 1.4em;
+}
+ 
+#notebook li { /* More space between bullet points */
+margin-top:0.8em;
+}
+
+div.cell.selected{
+background-color:#F1F0FF; /* light blue */
+border-radius: 10px; /* rounded borders = friendlier */
+}
+ 
+div.cell.code_cell {  /* Area containing both code and output */
+padding: 1em;
+}
+div.cell.text_cell {
+padding: 1.5em 0;
+background-color:#fff0f0; /* light red */
+border-color:grey;
+border-radius: 10px; /* rounded borders = friendlier */
+}
+
+.rendered_html pre, .rendered_html code {
+	background-color:lightgrey;
+	font-size:14px;
+	padding: 1px 3px;
+}
