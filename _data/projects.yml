@@ -11,8 +11,8 @@
 
 - title: Deep Understanding of Deep Learning
   description: >
-    Reverse-engineering deep networks is challenging and highlights the types of mathematical
-    analysis that need to be better developed to understand computation in the brain.
+    Reverse-engineering deep networks is challenging and highlights the kind of mathematical
+    analyses that we need to develop better in order to understand computation in the brain.
 
 - title: Julia Statistics and Optimization Packages 
   description: >
