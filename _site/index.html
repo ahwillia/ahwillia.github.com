@@ -1,56 +1,635 @@
 <!DOCTYPE html>
 <html>
-	
-<head>
-  <meta charset=utf-8 />
-  <title>  Alex Williams's personal website </title>
-  <link rel="stylesheet" href="/css/styles.css" />
-  <!-- Google Analytics Script -->
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Alex Williams</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="This is my (Alex Williams) research webpage. I'm a PhD student interested in neuroscience, molecular biology, epigenetics, statistics, optimization, and more.">
+    
+    <link rel="canonical" href="http://alexhwilliams.info/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
-  ga('create', 'UA-40613975-1', 'auto');
-  ga('send', 'pageview');
-  </script>
+    <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Google verification -->
+    
+
+    <!-- Bing Verification -->
+    
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
-<body>
-  <div style="text-align:left;">
-    <h1>
-	  Alex Williams
-      <span style="color:blue">|</span>
-      <span style="font-size:30px;color:white;font-family:lincoln;margin-top:50px"> A site about my research in Computational and Theoretical Neuroscience
-      </span>
-    </h1>
-  </div>
-  <div style="float:left;width:100%;height:780px;">
-    <div id="navbar">
-    <a href="/"><img src="/img/mypic.jpg" style="border-style:solid;border-width:3px"></a>
-      <nav role="navigation">
-          <ul>
-			<span class="navlinks">
-            <li><a href="/about/">About Me</a></li>
-            <li><a href="/pubs/">Publications</a></li>
-            <li><a href="/code/">Code</a></li>
-            <li><a href="/itsneuronalblog/" target="_blank">Blog</a></li>
-            <li><a href="/theory_book/" target="_blank">Teaching</a></li>
-            </span>
-          </ul>
-        </nav>
-    </div>
-    <div style="float:left;margin-top:45px;margin-left:100px;height:600px;width:600px;">
-      <section class="content">
-	<img src="/img/leech.jpg" width=500 style="margin-left:50px; margin-top:50px;">
-</section>
+    <body id="page-top" class="index">
+       <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">Alex Williams</a>
+            </div>
 
-      <img src="/img/email.png" style="display:block;padding-top:50px;margin-left:auto;margin-right:auto;">
-      <a href="https://twitter.com/ItsNeuronal" target="_blank">
-        <img src="/img/twitter.png" style="display:block;padding:15px 0px;margin-left:auto;margin-right:auto;" width="365px">
-      </a>
-    </div>
-  </div>
-</body>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#projects">Projects</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#publications">Publications</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="http://alexhwilliams.info/itsneuronalblog/">Blog</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+        <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img height=150 src="img/profile.jpg" alt="">
+                    <div class="intro-text">
+                        <span class="name">Alex Williams</span>
+                        <span class="skills">PhD Student<br>Computational/Theoretical Neuroscience</span><br>
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="http://twitter.com/itsneuronal" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://github.com/ahwillia" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://plus.google.com/117949242521636264602/posts" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="http://stackexchange.com/users/1835952/alex-williams?tab=accounts" class="btn-social btn-outline"><i class="fa fa-fw fa-stack-overflow"></i></a>
+                            </li>
+                            
+                            <li>
+                                <a href="https://scholar.google.com/citations?hl=en&user=7_GzzXMAAAAJ" class="btn-social btn-outline"><i class="fa fa-fw fa-graduation-cap"></i></a>
+                            </li>
+                            
+                        </ul>
+                        <script src="/js/mailme.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+     <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p class="small">I'm a PhD student in Neuroscience at Stanford University interested in a broad class of theoretical problems related to biology. I work in <a href="https://ganguli-gang.stanford.edu/" target="_blank">Surya Ganguli</a>'s group.</p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p class="small">I was previously a student at UC San Diego and a research technician at Brandeis University. I obtained my undergraduate degree from Bowdoin College. I am very grateful to have worked under some excellent mentors:</p>
+                    <ul>
+                        <li><a href="http://cnl.salk.edu/" target="_blank">Terry Sejnowski (Salk Institute)</a></li>
+                        <li><a href="http://brainome.ucsd.edu/" target="_blank">Eran Mukamel (UC San Diego)</a></li>
+                        <li><a href="http://blogs.brandeis.edu/marderlab/" target="_blank">Eve Marder (Brandeis University)</a></li>
+                        <li><a href="https://www.bowdoin.edu/faculty/p/pdickins/" target="_blank">Patsy Dickinson (Bowdoin College)</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p class="small">I am also very thankful to the <a href="http://www.krellinst.org/csgf/">DOE Computational Science Graduate Fellowship Program</a> for funding my PhD studies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Publications Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Projects</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <ul class="pub-list">
+                
+                    <li class="project title">
+                        Principled Statistical Frameworks for Defining Cell Types of the Brain
+                    </li>
+                    <li class="project description">
+                        Taking inventory of the cell types that compose the brain is a fundamental scientific problem, which touches on many interesting modern techniques in statistics and optimization. 
+
+                    </li>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a class="project item" href="http://alexhwilliams.info/itsneuronalblog/2015/11/18/clustering-is-easy/" target="_blank">
+                            <i class="fa fa-fw fa-edit fa-lg"></i>
+                            Clustering
+                            </a>
+                            &mdash;
+                            I'm interested in techniques for clustering with provable guarantees.
+
+                        </li>
+                        
+                    </ul>
+                    
+                    <br><br>
+                
+                    <li class="project title">
+                        Deep Understanding of Deep Learning
+                    </li>
+                    <li class="project description">
+                        Reverse-engineering deep networks is challenging and highlights the types of mathematical analysis that need to be better developed to understand computation in the brain.
+
+                    </li>
+                    
+                    <br><br>
+                
+                    <li class="project title">
+                        Julia Statistics and Optimization Packages
+                    </li>
+                    <li class="project description">
+                        I've written a few packages in Julia for statistics and optimization applications. Some of these are still works in progress or under active development.
+
+                    </li>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a class="project item" href="https://github.com/ahwillia/ProxAlgs.jl" target="_blank">
+                            <i class="fa fa-fw fa-github-square fa-lg"></i>
+                            ProxAlgs.jl
+                            </a>
+                            &mdash;
+                            Simple and flexible methods to solve non-smooth optimization problems with constraints.
+
+                        </li>
+                        
+                        <li>
+                            <a class="project item" href="https://github.com/ahwillia/NonNegLeastSquares.jl" target="_blank">
+                            <i class="fa fa-fw fa-github-square fa-lg"></i>
+                            NonNegLeastSquares.jl
+                            </a>
+                            &mdash;
+                            Active-set methods to efficiently solve <a href="https://en.wikipedia.org/wiki/Non-negative_least_squares" target="_blank">nonnegative least-squares problems</a>.
+
+                        </li>
+                        
+                        <li>
+                            <a class="project item" href="https://github.com/ahwillia/HiddenMarkovModel.jl" target="_blank">
+                            <i class="fa fa-fw fa-github-square fa-lg"></i>
+                            HiddenMarkovModel.jl
+                            </a>
+                            &mdash;
+                            A package for fitting <a href="http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf" target="_blank">hidden markov models</a> with arbitrary emission probability distributions.
+
+                        </li>
+                        
+                        <li>
+                            <a class="project item" href="https://github.com/ahwillia/HiddenMarkovModel.jl" target="_blank">
+                            <i class="fa fa-fw fa-github-square fa-lg"></i>
+                            ToyHMM.jl
+                            </a>
+                            &mdash;
+                            A simple package for fitting hidden markov models with discrete emissions. Good for teaching!
+
+                        </li>
+                        
+                    </ul>
+                    
+                    <br><br>
+                
+                </ul>
+            </div>
+        </div>
+    </section>
+     <!-- Publications Section -->
+    <section id="publications">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Publications</h2>
+                    <h5>(<i class="fa fa-star"></i> = personal favorite)</h5>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <h3>Papers</h3>
+                <ul class="pub-list">
+                
+                    
+<li class="title">
+    
+    Distinct or shared actions of peptide family isoforms&colon; II. Multiple pyrokinins exert similar effects in the lobster stomatogastric nervous system.
+</li>
+<li class="author">
+    Dickinson PS, Kurland SC, Qu X, Parker BO, Sreekrishnan A, Kwiatkowski MA, <b>Williams AH</b>, Ysasi AB, Christie AE (2015). <em>J Exp Biol</em>. 218:2905-17
+</li>
+
+<ul class="list-inline">
+
+    
+    <li class="paper-links">
+        <a href="/pdf/Dickinson_etal_2015.pdf" class="btn-small" target="_blank"><i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
+    </li>
+    
+
+    
+    <li class="paper-links">
+        <a href="http://dx.doi.org/10.1242/jeb.124818" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+</ul>
+
+                
+                    
+<li class="title">
+    
+    Summary of the DREAM8 parameter estimation challenge&colon; Toward parameter identification for whole-cell models.
+</li>
+<li class="author">
+    Karr JR, <b>Williams AH</b>, Zucker JD, Raue A, Steiert B, Timmer J, Kreutz C, DREAM8 Parameter Estimation Challenge Consortium, Wilkinson S, Allgood BA, Bot BM, Hoff BR, Kellen MR, Covert MW, Stolovitzky GA, Meyer P (2015). <em>PLoS Comput Biol</em>. 11(5):e1004096
+</li>
+
+<ul class="list-inline">
+
+    
+    <li class="paper-links">
+        <a href="/pdf/Karr_etal_2015.pdf" class="btn-small" target="_blank"><i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
+    </li>
+    
+
+    
+    <li class="paper-links">
+        <a href="http://dx.doi.org/10.1371/journal.pcbi.1004096" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
+    </li>
+    
+
+    
+    <li class="paper-links">
+        <a href="http://dx.doi.org/10.7303/syn1876068" class="btn-small" target="_blank"><i class="fa fa-fw fa-info fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="paper-links">
+        <a href="https://www.youtube.com/watch?v=dKez1gE4y-U" class="btn-small" target="_blank"><i class="fa fa-fw fa-youtube-square fa-lg"></i></a>
+    </li>
+    
+
+    <!-- 
+    <li class="paper-links">
+        <a href="http://www.the-scientist.com/?articles.view/articleNo/35836/title/May-the-Best-Model-Win/" class="btn-small" target="_blank"><i class="fa fa-fw fa-newspaper-o fa-lg"></i></a>
+    </li>
+     -->
+
+</ul>
+
+                
+                    
+<li class="title">
+    
+    <i class="fa fa-star"></i> 
+    
+    Cell types, network homeostasis and pathological compensation from a biologically plausible ion channel expression model.
+</li>
+<li class="author">
+    O’Leary T, <b>Williams AH</b>, Franci A, Marder E (2014). <em>Neuron</em>. 82(4):809-21
+</li>
+
+<ul class="list-inline">
+
+    
+    <li class="paper-links">
+        <a href="/pdf/OLeary_etal_2014.pdf" class="btn-small" target="_blank"><i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
+    </li>
+    
+
+    
+    <li class="paper-links">
+        <a href="http://dx.doi.org/10.1016/j.neuron.2014.04.002" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    
+    <li class="paper-links">
+        <a href="http://dx.doi.org/10.1016/j.neuron.2014.05.008" class="btn-small" target="_blank"><i class="fa fa-fw fa-comments fa-lg"></i></a>
+    </li>
+    
+
+    
+    <li class="paper-links">
+        <a href="https://github.com/marderlab/oleary_et_al_2014" class="btn-small" target="_blank"><i class="fa fa-fw fa-github-square fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    <!--  -->
+
+</ul>
+
+                
+                    
+<li class="title">
+    
+    Many parameter sets in a multicompartment model oscillator are robust to temperature perturbations.
+</li>
+<li class="author">
+    Caplan JS, <b>Williams AH</b>, Marder E (2014). <em>J Neurosci</em>. 34(14):4963-75
+</li>
+
+<ul class="list-inline">
+
+    
+    <li class="paper-links">
+        <a href="/pdf/Caplan_etal_2014.pdf" class="btn-small" target="_blank"><i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
+    </li>
+    
+
+    
+    <li class="paper-links">
+        <a href="http://dx.doi.org/10.1523/JNEUROSCI.0280-14.2014" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+</ul>
+
+                
+                    
+<li class="title">
+    
+    <i class="fa fa-star"></i> 
+    
+    The neuromuscular transform of the lobster cardiac system explains the opposing effects of a neuromodulator on muscle output.
+</li>
+<li class="author">
+    <b>Williams AH</b>, Calkins A, O’Leary T, Symonds R, Marder E, Dickinson PS (2013). <em>J Neurosci</em>. 33(42):16565-75
+</li>
+
+<ul class="list-inline">
+
+    
+    <li class="paper-links">
+        <a href="/pdf/Williams_etal_2013_NMT.pdf" class="btn-small" target="_blank"><i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
+    </li>
+    
+
+    
+    <li class="paper-links">
+        <a href="http://dx.doi.org/10.1523/JNEUROSCI.2903-13.2013" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+</ul>
+
+                
+                    
+<li class="title">
+    
+    Correlations in ion channel expression emerge from homeostatic regulation mechanisms.
+</li>
+<li class="author">
+    O’Leary T, <b>Williams AH</b>, Caplan JS, Marder E (2013). <em>Proc Natl Acad Sci USA</em>. 110(28):E2645-54
+</li>
+
+<ul class="list-inline">
+
+    
+    <li class="paper-links">
+        <a href="/pdf/OLeary_etal_2013.pdf" class="btn-small" target="_blank"><i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
+    </li>
+    
+
+    
+    <li class="paper-links">
+        <a href="http://dx.doi.org/10.1073/pnas.1309966110" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+</ul>
+
+                
+                    
+<li class="title">
+    
+    Animal-to-animal variability in the phasing of the crustacean cardiac motor pattern&colon; an experimental and computational analysis.
+</li>
+<li class="author">
+    <b>Williams AH</b>, Kwiatkoswki MA, Mortimer AL, Marder E, Zeeman ML, Dickinson PS (2013). (2013). <em>J Neurophysiol</em>. 109:2451-65.
+</li>
+
+<ul class="list-inline">
+
+    
+    <li class="paper-links">
+        <a href="/pdf/Williams_etal_2013_CG.pdf" class="btn-small" target="_blank"><i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
+    </li>
+    
+
+    
+    <li class="paper-links">
+        <a href="http://dx.doi.org/10.1152/jn.01010.2012" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+</ul>
+
+                
+                </ul>
+                <h3>Reviews</h3>
+                <ul class="pub-list">
+                
+                    
+<li class="title">
+    
+    Neuromodulation in Small Networks.
+</li>
+<li class="author">
+    <b>Williams AH</b>, Hamood AW, Marder E (2015). <em>Springer Encyclopedia of Computational Neuroscience</em>. 
+</li>
+
+<ul class="list-inline">
+
+    
+    <li class="paper-links">
+        <a href="/pdf/Williams_Springer_Review.pdf" class="btn-small" target="_blank"><i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+</ul>
+
+                
+                    
+<li class="title">
+    
+    Homeostatic Regulation of Neuronal Excitability.
+</li>
+<li class="author">
+    <b>Williams AH</b>, O’Leary T, Marder E (2015). <em>Scholarpedia</em>. 8(1):1656
+</li>
+
+<ul class="list-inline">
+
+    
+
+    
+    <li class="paper-links">
+        <a href="http://www.scholarpedia.org/article/Homeostatic_Regulation_of_Neuronal_Excitability" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+</ul>
+
+                
+                </ul>
+            </div>
+        </div>
+    </section>
+
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    
+    <script src="/js/contact_me_static.js"></script>
+    
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+
+    
+
+    </body>
 </html>

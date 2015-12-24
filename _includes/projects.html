@@ -1,0 +1,38 @@
+ <!-- Publications Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Projects</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <ul class="pub-list">
+                {% for project in site.data.projects %}
+                    <li class="project title">
+                        {{ project.title }}
+                    </li>
+                    <li class="project description">
+                        {{ project.description }}
+                    </li>
+                    {% if project.items %}
+                    <ul>
+                        {% for item in project.items %}
+                        <li>
+                            <a class="project item" href="{{ item.url }}" target="_blank">
+                            <i class="fa fa-fw fa-{{ item.icon }} fa-lg"></i>
+                            {{ item.name }}
+                            </a>
+                            &mdash;
+                            {{ item.description }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <br><br>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>

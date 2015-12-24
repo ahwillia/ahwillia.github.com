@@ -1,0 +1,22 @@
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img height=150 src="img/profile.jpg" alt="">
+                    <div class="intro-text">
+                        <span class="name">Alex Williams</span>
+                        <span class="skills">PhD Student<br>Computational/Theoretical Neuroscience</span><br>
+                        <ul class="list-inline">
+                            {% for network in site.social %}
+                            <li>
+                                <a href="{{ network.url }}" class="btn-social btn-outline"><i class="fa fa-fw fa-{{ network.title }}"></i></a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <script src="/js/mailme.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

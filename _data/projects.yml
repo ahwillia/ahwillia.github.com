@@ -1,0 +1,50 @@
+- title: Principled Statistical Frameworks for Defining Cell Types of the Brain
+  description: >
+    Taking inventory of the cell types that compose the brain is a fundamental scientific
+    problem, which touches on many interesting modern techniques in statistics and optimization. 
+  items:
+  - name: Clustering
+    icon: edit
+    url: http://alexhwilliams.info/itsneuronalblog/2015/11/18/clustering-is-easy/
+    description: >
+      I'm interested in techniques for clustering with provable guarantees.
+
+- title: Deep Understanding of Deep Learning
+  description: >
+    Reverse-engineering deep networks is challenging and highlights the types of mathematical
+    analysis that need to be better developed to understand computation in the brain.
+
+- title: Julia Statistics and Optimization Packages 
+  description: >
+    I've written a few packages in Julia for statistics and optimization applications.
+    Some of these are still works in progress or under active development.
+  items:
+  - name: ProxAlgs.jl
+    icon: github-square
+    description: >
+      Simple and flexible methods to solve non-smooth optimization problems with
+      constraints.
+    url: https://github.com/ahwillia/ProxAlgs.jl
+
+  - name: NonNegLeastSquares.jl
+    icon: github-square
+    description: >
+      Active-set methods to efficiently solve
+      <a href="https://en.wikipedia.org/wiki/Non-negative_least_squares"
+      target="_blank">nonnegative least-squares problems</a>.
+    url: https://github.com/ahwillia/NonNegLeastSquares.jl
+
+  - name: HiddenMarkovModel.jl
+    icon: github-square
+    description: >
+      A package for fitting
+      <a href="http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf"
+      target="_blank">hidden markov models</a> with arbitrary emission probability distributions.
+    url: https://github.com/ahwillia/HiddenMarkovModel.jl
+
+  - name: ToyHMM.jl
+    icon: github-square
+    description: >
+      A simple package for fitting hidden markov models with discrete emissions. Good for teaching!
+    url: https://github.com/ahwillia/HiddenMarkovModel.jl
+

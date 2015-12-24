@@ -1,0 +1,56 @@
+
+<li class="title">
+    {% if paper.selected %}
+    <i class="fa fa-star"></i> 
+    {% endif %}
+    {{ paper.title }}
+</li>
+<li class="author">
+    {{ paper.author }} ({{ paper.year }}). <em>{{ paper.journal }}</em>. {{ paper.pg }}
+</li>
+
+<ul class="list-inline">
+
+    {% if paper.pdf %}
+    <li class="paper-links">
+        <a href="{{ paper.pdf }}" class="btn-small" target="_blank"><i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
+    </li>
+    {% endif %}
+
+    {% if paper.link %}
+    <li class="paper-links">
+        <a href="{{ paper.link }}" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
+    </li>
+    {% endif %}
+
+    {% if paper.info %}
+    <li class="paper-links">
+        <a href="{{ paper.info }}" class="btn-small" target="_blank"><i class="fa fa-fw fa-info fa-lg"></i></a>
+    </li>
+    {% endif %}
+
+    {% if paper.commentary %}
+    <li class="paper-links">
+        <a href="{{ paper.commentary }}" class="btn-small" target="_blank"><i class="fa fa-fw fa-comments fa-lg"></i></a>
+    </li>
+    {% endif %}
+
+    {% if paper.github %}
+    <li class="paper-links">
+        <a href="{{ paper.github }}" class="btn-small" target="_blank"><i class="fa fa-fw fa-github-square fa-lg"></i></a>
+    </li>
+    {% endif %}
+
+    {% if paper.youtube %}
+    <li class="paper-links">
+        <a href="{{ paper.youtube }}" class="btn-small" target="_blank"><i class="fa fa-fw fa-youtube-square fa-lg"></i></a>
+    </li>
+    {% endif %}
+
+    <!-- {% if paper.news %}
+    <li class="paper-links">
+        <a href="{{ paper.news }}" class="btn-small" target="_blank"><i class="fa fa-fw fa-newspaper-o fa-lg"></i></a>
+    </li>
+    {% endif %} -->
+
+</ul>
