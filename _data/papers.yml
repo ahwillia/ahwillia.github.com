@@ -6,6 +6,7 @@
   pdf: /pdf/Williams_etal_2016.pdf
   link: http://biorxiv.org/content/early/2016/01/19/037374
   github: https://github.com/ahwillia/Williams-etal-Synaptic-Transport
+  selected: true
 
 - title: Distinct or shared actions of peptide family isoforms&colon; II. Multiple pyrokinins exert similar effects in the lobster stomatogastric nervous system.
   author: Dickinson PS, Kurland SC, Qu X, Parker BO, Sreekrishnan A, Kwiatkowski MA, <b>Williams AH</b>, Ysasi AB, Christie AE
