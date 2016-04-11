@@ -1,18 +1,44 @@
-- title: Principled Statistical Frameworks for Defining Cell Types of the Brain
+- title: Principled Unsupervised Learning Techniques in Neuroscience
   description: >
-    Taking inventory of the cell types that compose the brain is a fundamental scientific
-    problem, which touches on many interesting modern techniques in statistics and optimization. 
+    Neuroscientists use "off-the-shelf" statistical techniques to make sense of their data
+    and gain intuition about their experimental system. Doing this is extremely necessary
+    given the explosion and growth of datasets, but also involves a lot of choices and
+    qualitative interpretation that reasonable experts may disagree on. What statistical
+    methods, techniques, and philosophies should we adopt to encourage transparency and
+    consistency across research groups?
   items:
   - name: Clustering
     icon: edit
     url: http://alexhwilliams.info/itsneuronalblog/2015/11/18/clustering-is-easy/
     description: >
-      I'm interested in techniques for clustering with provable guarantees.
+      Neuroscientists use clustering algorithms to categorize neurons and glia into functional
+      and genetic cell types. While the idea of a cannonical cell types is empirically useful
+      for building models and experimental tools, it is unclear how the choice of clustering
+      algorithm impacts our understanding of the brain. I'm interested in situations where
+      clusterings can be found with provable guarantees.
+  - name: Dimensionality Reduction
+    icon: edit
+    url: http://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/
+    description: >
+      Dimensionality reduction is another common (and related) class of techniques commonly
+      used by neuroscientists and biologists. I'm interested in developing and applying
+      extensions of principal components analysis (PCA) that are tailored to the particulars
+      of biological data.
 
-- title: Deep Understanding of Deep Learning
-  description: >
-    Reverse-engineering deep networks is challenging and highlights the kind of mathematical
-    analyses that we need to develop better in order to understand computation in the brain.
+# - title: Variability and Degeneracy in High-Dimensional Systems
+#   description: >
+#     Sloppy models..
+#   items:
+#   - name: Homeostatic Plasticity
+#     icon: file-pdf-o
+#     url: http://alexhwilliams.info/pdf/OLeary_etal_2014.pdf
+#     description: >
+#       test ets
+#   - name: Sloppy Error Landscapes
+#     icon: edit
+#     url: http://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/
+#     description: >
+#       Sloppy models overview
 
 - title: Julia Statistics and Optimization Packages 
   description: >
