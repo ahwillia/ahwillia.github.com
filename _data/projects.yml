@@ -45,12 +45,12 @@
     I've written a few packages in Julia for statistics and optimization applications.
     Some of these are still works in progress or under active development.
   items:
-  - name: ProxAlgs.jl
+  - name: Einsum.jl
     icon: github-square
     description: >
-      Simple and flexible methods to solve non-smooth optimization problems with
-      constraints.
-    url: https://github.com/ahwillia/ProxAlgs.jl
+      Einstein summation notation for flexible and efficient multi-dimensional arrray
+      computations.
+    url: https://github.com/ahwillia/Einsum.jl
 
   - name: NonNegLeastSquares.jl
     icon: github-square
