@@ -24,6 +24,41 @@
       used by neuroscientists and biologists. I'm interested in developing and applying
       extensions of principal components analysis (PCA) that are tailored to the particulars
       of biological data.
+  # - name: Tensor Decompositions
+  #   icon: edit
+  #   url: http://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/
+  #   description: >
+  #     Dimensionality reduction is another common (and related) class of techniques commonly
+  #     used by neuroscientists and biologists. I'm interested in developing and applying
+  #     extensions of principal components analysis (PCA) that are tailored to the particulars
+  #     of biological data.
+
+- title: Theoretical Molecular Neurobiology
+  description: >
+    Biology computes with both electrical and biochemical signals. I'm interested in modeling
+    the interface of these two substrates of computation.
+  items:
+  - name: Homeostatic Plasticity
+    icon: file-pdf-o
+    url: http://alexhwilliams.info/pdf/OLeary_etal_2014.pdf
+    description: >
+      Neurons alter ion channel and synaptic receptor expression/activity to maintain activity
+      levels in physiologically stable regimes. This can be modeled from a control theoretic
+      perspective, which provides perspectives on how noisy molecular processes can nevertheless
+      support reliable physiological behaviors.
+  - name: Microtubular Transport in Complex Dendritic Trees
+    icon: file-pdf-o
+    url: http://alexhwilliams.info/pdf/Williams_etal_2016.pdf
+    description: >
+      Neurons are remarkably complex cells. Given this, it seems an almost insurmountable challenge
+      to transport molecular cargo reliably. I've studied a few simple models of how reliable
+      transport can be accomplished.
+  - name: PyNeuronToolbox
+    icon: github-square
+    description: >
+      A package I wrote to enable better <a href="https://www.neuron.yale.edu/neuron/"
+      target="_blank">NEURON</a> simulations in Jupyter notebooks.
+    url: https://github.com/ahwillia/PyNeuron-Toolbox
 
 # - title: Variability and Degeneracy in High-Dimensional Systems
 #   description: >
