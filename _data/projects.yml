@@ -1,12 +1,19 @@
-- title: Principled Unsupervised Learning Techniques in Neuroscience
+- title: Unsupervised Learning Techniques for Neural Data
   description: >
     Neuroscientists use "off-the-shelf" unsupervised techniques to make sense of their data
     and gain intuition about their experimental system. Doing this is extremely necessary
     given the explosion and growth of datasets, but also involves a lot of choices and
-    qualitative interpretation that reasonable experts may disagree on. What statistical
-    methods, techniques, and philosophies should we adopt to encourage transparency and
-    consistency across research groups?
+    qualitative interpretation that reasonable experts may disagree on.
   items:
+  - name: Dimensionality Reduction of Multi-Trial Data
+    icon: edit
+    url: http://alexhwilliams.info/tensor_nips_2016.pdf
+    description: >
+      Commonly used methods for dimensionality reduction identify low-dimensional features of
+      within-trial neural dynamics, but do not model changes in neural activity across trials.
+      To better understand processes like learning and trial-to-trial variability, I'm
+      explorting techniques like tensor decompositions to find reduced representations of
+      multi-trial datasets.
   - name: Clustering
     icon: edit
     url: http://alexhwilliams.info/itsneuronalblog/2015/11/18/clustering-is-easy/
@@ -16,14 +23,6 @@
       for building models and experimental tools, it is unclear how the choice of clustering
       algorithm impacts our understanding of the brain. I'm interested in situations where
       clusterings can be found with provable guarantees.
-  - name: Dimensionality Reduction
-    icon: edit
-    url: http://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/
-    description: >
-      Dimensionality reduction is another common (and related) class of techniques commonly
-      used by neuroscientists and biologists. I'm interested in developing and applying
-      extensions of principal components analysis (PCA) that are tailored to the particulars
-      of biological data.
   # - name: Tensor Decompositions
   #   icon: edit
   #   url: http://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/
