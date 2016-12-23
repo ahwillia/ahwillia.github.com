@@ -6,15 +6,17 @@
     qualitative interpretation that reasonable experts may disagree on.
   items:
   - name: Dimensionality Reduction of Multi-Trial Data
-    icon: edit
+    icon: file-pdf-o
     url: http://alexhwilliams.info/pdf/tensor_nips_2016.pdf
     description: >
-      Commonly used methods for dimensionality reduction identify low-dimensional features of
-      within-trial neural dynamics, but do not model changes in neural activity across trials.
-      To better understand processes like learning and trial-to-trial variability, I'm
-      explorting techniques like tensor decompositions to find reduced representations of
-      multi-trial datasets.
-  - name: Clustering
+      Commonly used methods for dimensionality reduction (such as <a
+      href="http://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/" target="_blank">PCA</a>)
+      identify low-dimensional features of within-trial neural dynamics, but do not model
+      changes in neural activity across trials. To better understand processes like learning
+      and trial-to-trial variability, I'm exploring techniques like <a
+      href="http://www.sandia.gov/~tgkolda/pubs/pubfiles/TensorReview.pdf" target="_blank">
+      tensor decomposition</a> to find reduced representations of multi-trial datasets.
+  - name: Clustering of Neural Cell Types
     icon: edit
     url: http://alexhwilliams.info/itsneuronalblog/2015/11/18/clustering-is-easy/
     description: >
