@@ -25,14 +25,6 @@
       for building models and experimental tools, it is unclear how the choice of clustering
       algorithm impacts our understanding of the brain. I'm interested in situations where
       clusterings can be found with provable guarantees.
-  # - name: Tensor Decompositions
-  #   icon: edit
-  #   url: http://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/
-  #   description: >
-  #     Dimensionality reduction is another common (and related) class of techniques commonly
-  #     used by neuroscientists and biologists. I'm interested in developing and applying
-  #     extensions of principal components analysis (PCA) that are tailored to the particulars
-  #     of biological data.
 
 - title: Theoretical Molecular Neurobiology
   description: >
