@@ -1,30 +1,40 @@
-- title: Unsupervised Learning Techniques for Neural Data
+- title: Unsupervised Learning Techniques for Large-Scale, Multi-Trial Neural Data
   description: >
-    Neuroscientists use "off-the-shelf" unsupervised techniques to make sense of their data
-    and gain intuition about their experimental system. Doing this is extremely necessary
-    given the explosion and growth of datasets, but also involves a lot of choices and
-    qualitative interpretation that reasonable experts may disagree on.
+    An increasingly common paradigm in neuroscience is to simultaneously record the
+    activity of many neurons over repeated experimental trials (e.g., multiple
+    presentations of a sensory stimulus, or a repeated motor action). The resulting
+    datasets can be very large (in some cases, containing thousands of neurons and trials).
+    I'm interested in finding general statistical approaches for understanding datasets
+    of this form.
   items:
-  - name: Dimensionality Reduction of Multi-Trial Data
+  - name: Tensor Components Analysis (TCA)
     icon: file-pdf-o
-    url: http://alexhwilliams.info/pdf/tensor_nips_2016.pdf
+    url: http://alexhwilliams.info/pdf/cosyne17.pdf
     description: >
       Commonly used methods for dimensionality reduction (such as <a
       href="http://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/" target="_blank">PCA</a>)
       identify low-dimensional features of within-trial neural dynamics, but do not model
       changes in neural activity across trials. To better understand processes like learning
-      and trial-to-trial variability, I'm exploring techniques like <a
+      and trial-to-trial variability, I'm exploring <a
       href="http://www.sandia.gov/~tgkolda/pubs/pubfiles/TensorReview.pdf" target="_blank">
-      tensor decomposition</a> to find reduced representations of multi-trial datasets.
-  - name: Clustering of Neural Cell Types
-    icon: edit
-    url: http://alexhwilliams.info/itsneuronalblog/2015/11/18/clustering-is-easy/
+      tensor decomposition methods</a> to find reduced representations of multi-trial datasets.
+  - name: TensorTools
+    icon: github-square
+    url: http://github.com/ahwillia/tensortools
     description: >
-      Neuroscientists use clustering algorithms to categorize neurons and glia into functional
-      and genetic cell types. While the idea of cannonical cell types is empirically useful
-      for building models and experimental tools, it is unclear how the choice of clustering
-      algorithm impacts our understanding of the brain. I'm interested in situations where
-      clusterings can be found with provable guarantees.
+      My Python toolbox for fitting tensor decompositions to neural data.
+  - name: Time Warped Dimensionality Reduction
+    icon: github-square
+    url: https://github.com/ganguli-lab/twpca
+    description: >
+      Analysis of neural data often relies on a strict alignment of neural activity to
+      a stimulus or behavioral event on each trial. However, alignment to external events
+      is not always possible (e.g., in cases where neural activity is locked to internal
+      cognitive states or decisions or other unobserved latent factors). I've developed a
+      method to align trials by time warping, while jointly fitting a dimensionality
+      reduction model. This was done in close collaboration with
+      <a href="cs.stanford.edu/~poole/">Ben Poole</a> and
+      <a href="http://niru.org/">Niru Maheswaranathan</a>.
 
 - title: Theoretical Molecular Neurobiology
   description: >
@@ -68,10 +78,12 @@
 #     description: >
 #       Sloppy models overview
 
-- title: Julia Statistics and Optimization Packages 
+- title: Miscellaneous Codes
   description: >
-    I've written a few packages in Julia for statistics and optimization applications.
-    Some of these are still works in progress or under active development.
+    I've written a few packages in Julia for statistics and optimization.
+    These are not in active development at the moment, but I'd like to return
+    to them someday.
+
   items:
   - name: Einsum.jl
     icon: github-square
@@ -87,14 +99,6 @@
       <a href="https://en.wikipedia.org/wiki/Non-negative_least_squares"
       target="_blank">nonnegative least-squares problems</a>.
     url: https://github.com/ahwillia/NonNegLeastSquares.jl
-
-  - name: HiddenMarkovModel.jl
-    icon: github-square
-    description: >
-      A package for fitting
-      <a href="http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf"
-      target="_blank">hidden markov models</a> with arbitrary emission probability distributions.
-    url: https://github.com/ahwillia/HiddenMarkovModel.jl
 
   - name: ToyHMM.jl
     icon: github-square
