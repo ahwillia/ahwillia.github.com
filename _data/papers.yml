@@ -1,3 +1,11 @@
+- title: Unsupervised discovery of temporal sequences in high-dimensional datasets, with applications to neuroscience
+  author: Mackevicius EL, Bahle AH, <b>Williams AH</b>, Gu S, Denissenko NI, Goldman MS, Fee MS
+  year: 2017
+  journal: bioRxiv preprint
+  pdf: https://www.biorxiv.org/content/early/2018/03/02/273128.full.pdf
+  link: https://doi.org/10.1101/273128
+  github: https://github.com/FeeLab/seqNMF
+
 - title: Unsupervised discovery of demixed, low-dimensional neural dynamics across multiple timescales through tensor components analysis
   author: <b>Williams AH</b>, Kim TH, Wang F, Vyas S, Ryu SI, Shenoy KV, Schnitzer M, Kolda TG, Ganguli S
   year: 2017
