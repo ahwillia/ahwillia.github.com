@@ -33,7 +33,7 @@
       Yet, statistical methods for identifying neural sequences in an unbiased manner
       (without pre-conceived reference to animal behavior) are not widely used. I am interested
       in using convolutive matrix factorization methods to address this problem.
-  - name: Time warpingin
+  - name: Time warping
     icon: github-square
     url: https://github.com/ganguli-lab/twpca
     description: >

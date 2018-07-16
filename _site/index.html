@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="This is my (Alex Williams) research webpage. I'm a PhD student interested in neuroscience, molecular biology, epigenetics, statistics, optimization, and more.">
     
-    <link rel="canonical" href="http://alexhwilliams.info/">
+    <link rel="canonical" href="http://localhost:4000/">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
@@ -125,23 +125,12 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="small">I'm a PhD student in Neuroscience at Stanford University interested in a broad class of theoretical problems related to biology. I work in <a href="https://ganguli-gang.stanford.edu/" target="_blank">Surya Ganguli</a>'s group.</p>
+                    <p class="small">I'm a PhD student in Neuroscience at Stanford University interested in a broad class of theoretical problems related to biology. I work in <a href="https://ganguli-gang.stanford.edu/" target="_blank">Surya Ganguli</a>'s group, and am funded through the <a href="http://www.krellinst.org/csgf/">DOE Computational Science Graduate Fellowship Program</a>.</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="small">I was previously a student at UC San Diego and a research technician at Brandeis University. I obtained my undergraduate degree from Bowdoin College. I am very grateful to have worked under some excellent mentors:</p>
-                    <ul>
-                        <li><a href="http://cnl.salk.edu/" target="_blank">Terry Sejnowski (Salk Institute)</a></li>
-                        <li><a href="http://brainome.ucsd.edu/" target="_blank">Eran Mukamel (UC San Diego)</a></li>
-                        <li><a href="http://blogs.brandeis.edu/marderlab/" target="_blank">Eve Marder (Brandeis University)</a></li>
-                        <li><a href="https://www.bowdoin.edu/faculty/p/pdickins/" target="_blank">Patsy Dickinson (Bowdoin College)</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="small">I am also very thankful to the <a href="http://www.krellinst.org/csgf/">DOE Computational Science Graduate Fellowship Program</a> for funding my PhD studies.</p>
+                    <p class="small">I previously worked at the Salk Institute (with <a href="http://cnl.salk.edu/" target="_blank">Terry Sejnowski</a>) and Brandeis University (with <a href="http://blogs.brandeis.edu/marderlab/" target="_blank">Eve Marder</a> and <a href="http://olearylab.org/" target="_blank">Tim O'Leary</a>). I was an undergraduate at Bowdoin College, where I worked with <a href="https://www.bowdoin.edu/faculty/p/pdickins/" target="_blank">Patsy Dickinson</a>.
                 </div>
             </div>
         </div>
@@ -160,32 +149,52 @@
                 <ul class="pub-list">
                 
                     <li class="project title">
-                        Unsupervised Learning Techniques for Neural Data
+                        Unsupervised Learning Techniques for Large-Scale, Multi-Trial Neural Data
                     </li>
                     <li class="project description">
-                        Neuroscientists use "off-the-shelf" unsupervised techniques to make sense of their data and gain intuition about their experimental system. Doing this is extremely necessary given the explosion and growth of datasets, but also involves a lot of choices and qualitative interpretation that reasonable experts may disagree on.
+                        An increasingly common paradigm in neuroscience is to simultaneously record the activity of many neurons over repeated experimental trials (e.g., multiple presentations of a sensory stimulus, or a repeated motor action). The resulting datasets can be very large, potentially containing recordings from thousands of neurons over thousands of experimental trials. I'm interested in finding general statistical approaches for understanding datasets of this form.
 
                     </li>
                     
                     <ul>
                         
                         <li>
-                            <a class="project item" href="http://alexhwilliams.info/pdf/tensor_nips_2016.pdf" target="_blank">
-                            <i class="fa fa-fw fa-edit fa-lg"></i>
-                            Dimensionality Reduction of Multi-Trial Data
+                            <a class="project item" href="http://alexhwilliams.info/pdf/cosyne17.pdf" target="_blank">
+                            <i class="fa fa-fw fa-file-pdf-o fa-lg"></i>
+                            Tensor Decomposition of Neural Data
                             </a>
                             &mdash;
-                            Commonly used methods for dimensionality reduction identify low-dimensional features of within-trial neural dynamics, but do not model changes in neural activity across trials. To better understand processes like learning and trial-to-trial variability, I'm explorting techniques like tensor decompositions to find reduced representations of multi-trial datasets.
+                            Commonly used methods for dimensionality reduction (such as <a href="http://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/" target="_blank">PCA</a>) identify low-dimensional features of within-trial neural dynamics, but do not model changes in neural activity across trials. To better understand processes like learning and trial-to-trial variability, I'm exploring <a href="http://www.sandia.gov/~tgkolda/pubs/pubfiles/TensorReview.pdf" target="_blank"> tensor decomposition methods</a> to find reduced representations of multi-trial datasets.
 
                         </li>
                         
                         <li>
-                            <a class="project item" href="http://alexhwilliams.info/itsneuronalblog/2015/11/18/clustering-is-easy/" target="_blank">
-                            <i class="fa fa-fw fa-edit fa-lg"></i>
-                            Clustering of Neural Cell Types
+                            <a class="project item" href="http://github.com/ahwillia/tensortools" target="_blank">
+                            <i class="fa fa-fw fa-github-square fa-lg"></i>
+                            TensorTools
                             </a>
                             &mdash;
-                            Neuroscientists use clustering algorithms to categorize neurons and glia into functional and genetic cell types. While the idea of cannonical cell types is empirically useful for building models and experimental tools, it is unclear how the choice of clustering algorithm impacts our understanding of the brain. I'm interested in situations where clusterings can be found with provable guarantees.
+                            My Python toolbox for fitting tensor decompositions to neural data.
+
+                        </li>
+                        
+                        <li>
+                            <a class="project item" href="https://www.biorxiv.org/content/early/2018/03/02/273128.full.pdf" target="_blank">
+                            <i class="fa fa-fw fa-file-pdf-o fa-lg"></i>
+                            Sequence Extraction
+                            </a>
+                            &mdash;
+                            Many animal behaviors are built as a sequence of motor primitives or decisions. The neurons that support these (and other) behaviors can also fire in repeatable sequences. Yet, statistical methods for identifying neural sequences in an unbiased manner (without pre-conceived reference to animal behavior) are not widely used. I am interested in using convolutive matrix factorization methods to address this problem.
+
+                        </li>
+                        
+                        <li>
+                            <a class="project item" href="https://github.com/ganguli-lab/twpca" target="_blank">
+                            <i class="fa fa-fw fa-github-square fa-lg"></i>
+                            Time warping
+                            </a>
+                            &mdash;
+                            Analysis of neural data often relies on manual alignment of neural activity to a stimulus or behavioral event on each trial. However, alignment to external events is not always possible (e.g., in cases where neural activity is locked to internal cognitive states or decisions). I'm working to develop automatic alignment methods for these cases, enabling discovery of otherwise hidden neural coding patterns.
 
                         </li>
                         
@@ -238,10 +247,10 @@
                     <br><br>
                 
                     <li class="project title">
-                        Julia Statistics and Optimization Packages
+                        Miscellaneous Codes
                     </li>
                     <li class="project description">
-                        I've written a few packages in Julia for statistics and optimization applications. Some of these are still works in progress or under active development.
+                        I've written a few packages in Julia for statistics and optimization. These are not in active development at the moment, but I'd like to return to them someday.
 
                     </li>
                     
@@ -264,16 +273,6 @@
                             </a>
                             &mdash;
                             Active-set methods to efficiently solve <a href="https://en.wikipedia.org/wiki/Non-negative_least_squares" target="_blank">nonnegative least-squares problems</a>.
-
-                        </li>
-                        
-                        <li>
-                            <a class="project item" href="https://github.com/ahwillia/HiddenMarkovModel.jl" target="_blank">
-                            <i class="fa fa-fw fa-github-square fa-lg"></i>
-                            HiddenMarkovModel.jl
-                            </a>
-                            &mdash;
-                            A package for fitting <a href="http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf" target="_blank">hidden markov models</a> with arbitrary emission probability distributions.
 
                         </li>
                         
@@ -312,12 +311,90 @@
                     
 <li class="title">
     
+    Unsupervised discovery of temporal sequences in high-dimensional datasets, with applications to neuroscience
+</li>
+<li class="author">
+    Mackevicius EL, Bahle AH, <b>Williams AH</b>, Gu S, Denissenko NI, Goldman MS, Fee MS (2018). <em>bioRxiv preprint</em>. 
+</li>
+
+<ul class="list-inline">
+
+    
+    <li class="paper-links">
+        <a href="https://www.biorxiv.org/content/early/2018/03/02/273128.full.pdf" class="btn-small" target="_blank"><i class="fa fa-fw fa-file-pdf-o fa-lg"></i></a>
+    </li>
+    
+
+    
+    <li class="paper-links">
+        <a href="https://doi.org/10.1101/273128" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="paper-links">
+        <a href="https://github.com/FeeLab/seqNMF" class="btn-small" target="_blank"><i class="fa fa-fw fa-github-square fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    <!--  -->
+
+</ul>
+
+                
+                    
+<li class="title">
+    
+    <i class="fa fa-star"></i> 
+    
+    Unsupervised discovery of demixed, low-dimensional neural dynamics across multiple timescales through tensor components analysis
+</li>
+<li class="author">
+    <b>Williams AH</b>, Kim TH, Wang F, Vyas S, Ryu SI, Shenoy KV, Schnitzer M, Kolda TG, Ganguli S (2017). <em>Neuron</em>. 98(6):1099–1115.e8
+</li>
+
+<ul class="list-inline">
+
+    
+
+    
+    <li class="paper-links">
+        <a href="https://doi.org/10.1016/j.neuron.2018.05.015" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    
+
+    
+    <li class="paper-links">
+        <a href="https://github.com/ahwillia/tensortools" class="btn-small" target="_blank"><i class="fa fa-fw fa-github-square fa-lg"></i></a>
+    </li>
+    
+
+    
+
+    <!--  -->
+
+</ul>
+
+                
+                    
+<li class="title">
+    
     <i class="fa fa-star"></i> 
     
     Dendritic trafficking faces physiologically critical speed-precision tradeoffs
 </li>
 <li class="author">
-    <b>Williams AH</b>, O’Donnell C, Sejnowski T, O’Leary T (in press). <em>eLife</em>. 
+    <b>Williams AH</b>, O’Donnell C, Sejnowski T, O’Leary T (2016). <em>eLife</em>. 5:e20556
 </li>
 
 <ul class="list-inline">
@@ -330,7 +407,7 @@
 
     
     <li class="paper-links">
-        <a href="http://biorxiv.org/content/early/2016/08/11/037374" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
+        <a href="http://dx.doi.org/10.7554/eLife.20556" class="btn-small" target="_blank"><i class="fa fa-fw fa-link fa-lg"></i></a>
     </li>
     
 
@@ -519,8 +596,6 @@
                 
                     
 <li class="title">
-    
-    <i class="fa fa-star"></i> 
     
     The neuromuscular transform of the lobster cardiac system explains the opposing effects of a neuromodulator on muscle output.
 </li>
