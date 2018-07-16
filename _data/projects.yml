@@ -63,22 +63,6 @@
       A package I wrote to enable better <a href="https://www.neuron.yale.edu/neuron/"
       target="_blank">NEURON</a> simulations in Jupyter notebooks.
     url: https://github.com/ahwillia/PyNeuron-Toolbox
-
-# - title: Variability and Degeneracy in High-Dimensional Systems
-#   description: >
-#     Sloppy models..
-#   items:
-#   - name: Homeostatic Plasticity
-#     icon: file-pdf-o
-#     url: http://alexhwilliams.info/pdf/OLeary_etal_2014.pdf
-#     description: >
-#       test ets
-#   - name: Sloppy Error Landscapes
-#     icon: edit
-#     url: http://alexhwilliams.info/itsneuronalblog/2016/03/27/pca/
-#     description: >
-#       Sloppy models overview
-
 - title: Code
   description: Open-sourced research code.
   items:
