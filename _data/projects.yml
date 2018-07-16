@@ -19,11 +19,6 @@
       and trial-to-trial variability, I'm exploring <a
       href="http://www.sandia.gov/~tgkolda/pubs/pubfiles/TensorReview.pdf" target="_blank">
       tensor decomposition methods</a> to find reduced representations of multi-trial datasets.
-  - name: TensorTools
-    icon: github-square
-    url: http://github.com/ahwillia/tensortools
-    description: >
-      My Python toolbox for fitting tensor decompositions to neural data.
   - name: Sequence Extraction
     icon: file-pdf-o
     url: https://www.biorxiv.org/content/early/2018/03/02/273128.full.pdf
@@ -84,31 +79,24 @@
 #     description: >
 #       Sloppy models overview
 
-- title: Miscellaneous Codes
-  description: >
-    I've written a few packages in Julia for statistics and optimization.
-    These are not in active development at the moment, but I'd like to return
-    to them someday.
-
+- title: Code
+  description: Open-sourced research code.
   items:
-  - name: Einsum.jl
+  - name: TensorTools
     icon: github-square
+    url: http://github.com/ahwillia/tensortools
     description: >
-      Einstein summation notation for flexible and efficient multi-dimensional arrray
-      computations.
-    url: https://github.com/ahwillia/Einsum.jl
-
+      My Python toolbox for fitting tensor decompositions to neural data.
   - name: NonNegLeastSquares.jl
     icon: github-square
     description: >
       Active-set methods to efficiently solve
       <a href="https://en.wikipedia.org/wiki/Non-negative_least_squares"
-      target="_blank">nonnegative least-squares problems</a>.
+      target="_blank">nonnegative least-squares problems</a> in Julia.
     url: https://github.com/ahwillia/NonNegLeastSquares.jl
-
   - name: ToyHMM.jl
     icon: github-square
     description: >
-      A simple package for fitting hidden markov models with discrete emissions. Good for teaching!
+      A simple package for fitting Hidden Markov Models with discrete emissions in Julia. Good for teaching!
     url: https://github.com/ahwillia/HiddenMarkovModel.jl
 

@@ -5,8 +5,8 @@
     <description>This is my (Alex Williams) research webpage. I'm a PhD student interested in neuroscience, molecular biology, epigenetics, statistics, optimization, and more.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 16 Jul 2018 14:14:37 -0400</pubDate>
-    <lastBuildDate>Mon, 16 Jul 2018 14:14:37 -0400</lastBuildDate>
+    <pubDate>Mon, 16 Jul 2018 14:20:30 -0400</pubDate>
+    <lastBuildDate>Mon, 16 Jul 2018 14:20:30 -0400</lastBuildDate>
     <generator>Jekyll v3.8.3</generator>
     
   </channel>
