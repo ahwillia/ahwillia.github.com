@@ -13,7 +13,6 @@
   pg: 98(6):1099–1115.e8
   link: https://doi.org/10.1016/j.neuron.2018.05.015
   github: https://github.com/ahwillia/tensortools
-  selected: true
 
 - title: Dendritic trafficking faces physiologically critical speed-precision tradeoffs
   author: <b>Williams AH</b>, O’Donnell C, Sejnowski T, O’Leary T
@@ -23,7 +22,6 @@
   pdf: /pdf/Williams_etal_2016.pdf
   link: http://dx.doi.org/10.7554/eLife.20556
   github: https://github.com/ahwillia/Williams-etal-Synaptic-Transport
-  selected: true
 
 - title: Distinct or shared actions of peptide family isoforms&colon; II. Multiple pyrokinins exert similar effects in the lobster stomatogastric nervous system.
   author: Dickinson PS, Kurland SC, Qu X, Parker BO, Sreekrishnan A, Kwiatkowski MA, <b>Williams AH</b>, Ysasi AB, Christie AE
@@ -53,7 +51,6 @@
   link: http://dx.doi.org/10.1016/j.neuron.2014.04.002
   commentary: http://dx.doi.org/10.1016/j.neuron.2014.05.008
   github: https://github.com/marderlab/oleary_et_al_2014
-  selected: true
 
 - title: Many parameter sets in a multicompartment model oscillator are robust to temperature perturbations.
   author: Caplan JS, <b>Williams AH</b>, Marder E
