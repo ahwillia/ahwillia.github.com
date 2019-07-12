@@ -1,3 +1,10 @@
+- title: Reverse engineering recurrent networks for sentiment classification reveals line attractor dynamics
+  author: Maheswaranathan N, <b>Williams A</b>, Golub MD, Ganguli S, Sussillo D
+  year: 2019
+  journal: arXiv
+  pg: 1906.10720
+  link: https://arxiv.org/abs/1906.10720
+
 - title: Fast Convolutive Nonnegative Matrix Factorization Through Coordinate and Block Coordinate Updates
   author: Degleris A, Antin B, Ganguli S, <b>Williams AH</b>
   year: 2019
