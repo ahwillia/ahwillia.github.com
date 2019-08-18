@@ -9,6 +9,8 @@
     <a href="https://pyramidal.stanford.edu/publications/Williams2018_Neuron.pdf",
     target="_blank">Williams et al. (2018)</a> and
     <a href="https://doi.org/10.1101/661165", target="_blank">Williams et al. (2019)</a>.
+    Also check out <a href="https://www.youtube.com/watch?v=hmmnRF66hOA", target="_blank">
+    this tutorial</a> (from 2017) for a broader overview of this subject.
 
 - title: Automated segmentation and detection of motifs in high-dimensional time series
   description: >
@@ -25,7 +27,7 @@
 
 - title: Code
   description: >
-    I have released a variety of code related to the above research interests.
+    I have released a few code packages related to the above research interests.
   items:
   - name: tensortools
     icon: github-square
