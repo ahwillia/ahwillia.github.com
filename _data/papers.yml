@@ -22,10 +22,10 @@
 
 - title: Discovering precise temporal patterns in large-scale neural recordings through robust and interpretable time warping
   author: <b>Williams AH</b>, Poole B, Maheswaranathan N, Dhawale AK, Fisher T, Wilson CD, Brann DH, Trautmann E, Ryu S, Shusterman R, Rinberg D, &Ouml;lveczky BP, Shenoy KV, Ganguli S
-  year: 2019
-  journal: bioRXiv
-  pg: 661165
-  link: https://doi.org/10.1101/661165
+  year: In Press
+  journal: Neuron
+  pg: _
+  link: https://doi.org/10.1016/j.neuron.2019.10.020
   github: https://github.com/ahwillia/affinewarp
 
 - title: Unsupervised discovery of temporal sequences in high-dimensional datasets, with applications to neuroscience
