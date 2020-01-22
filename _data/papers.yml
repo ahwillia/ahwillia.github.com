@@ -1,3 +1,11 @@
+- title: Discovering precise temporal patterns in large-scale neural recordings through robust and interpretable time warping
+  author: <b>Williams AH</b>, Poole B, Maheswaranathan N, Dhawale AK, Fisher T, Wilson CD, Brann DH, Trautmann E, Ryu S, Shusterman R, Rinberg D, &Ouml;lveczky BP, Shenoy KV, Ganguli S
+  year: 2020
+  journal: Neuron
+  pg: 105(2):246-259.e8
+  link: https://doi.org/10.1016/j.neuron.2019.10.020
+  github: https://github.com/ahwillia/affinewarp
+
 - title: Universality and individuality in neural dynamics across large populations of recurrent networks
   author: Maheswaranathan N, <b>Williams AH</b>, Golub MD, Ganguli S, Sussillo D
   year: 2019
@@ -19,14 +27,6 @@
   pg: 1907.00139
   link: https://arxiv.org/abs/1907.00139
   github: https://github.com/degleris1/CMF.jl
-
-- title: Discovering precise temporal patterns in large-scale neural recordings through robust and interpretable time warping
-  author: <b>Williams AH</b>, Poole B, Maheswaranathan N, Dhawale AK, Fisher T, Wilson CD, Brann DH, Trautmann E, Ryu S, Shusterman R, Rinberg D, &Ouml;lveczky BP, Shenoy KV, Ganguli S
-  year: In Press
-  journal: Neuron
-  pg: _
-  link: https://doi.org/10.1016/j.neuron.2019.10.020
-  github: https://github.com/ahwillia/affinewarp
 
 - title: Unsupervised discovery of temporal sequences in high-dimensional datasets, with applications to neuroscience
   author: Mackevicius EL, Bahle AH, <b>Williams AH</b>, Gu S, Denissenko NI, Goldman MS, Fee MS
