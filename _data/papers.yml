@@ -1,11 +1,12 @@
 - title: Point process models for sequence detection in high-dimensional neural spike trains
   author: <b>Williams AH</b>, Degleris A, Wang Y, Linderman SW
   year: 2020
-  journal: Neural Information Processing Systems (selected for oral presentation)
-  pg: 105(2):246-259.e8
+  journal: Neural Information Processing Systems
+  pg: Vancouver, CA.
   link: https://arxiv.org/abs/2010.04875
   github: https://github.com/lindermanlab/PPSeq.jl
   pdf: https://arxiv.org/pdf/2010.04875.pdf
+  award: selected for oral presentation 
 
 - title: Dynamic and reversible remapping of network representations in an unchanging environment
   author: Low IIC, <b>Williams AH</b>, Campbell MG, Linderman SW, Giocomo LM
@@ -35,15 +36,16 @@
   pdf: /pdf/2020_timewarp.pdf
 
 - title: Universality and individuality in neural dynamics across large populations of recurrent networks
-  author: Maheswaranathan N, <b>Williams AH</b>, Golub MD, Ganguli S, Sussillo D
+  author: Maheswaranathan N*, <b>Williams AH</b>*, Golub MD, Ganguli S, Sussillo D
   year: 2019
   journal: Neural Information Processing Systems
-  pg: Vancouver, CA. (selected for spotlight talk)
+  pg: Vancouver, CA.
   link: https://arxiv.org/abs/1907.08549
   pdf: /pdf/2019_univ_and_indiv.pdf
+  award: selected for spotlight talk
 
 - title: Reverse engineering recurrent networks for sentiment classification reveals line attractor dynamics
-  author: Maheswaranathan N, <b>Williams AH</b>, Golub MD, Ganguli S, Sussillo D
+  author: Maheswaranathan N*, <b>Williams AH</b>*, Golub MD, Ganguli S, Sussillo D
   year: 2019
   journal: Neural Information Processing Systems
   pg: Vancouver, CA
@@ -60,7 +62,7 @@
   pdf: /pdf/2019_hals_convnmf.pdf
 
 - title: Unsupervised discovery of temporal sequences in high-dimensional datasets, with applications to neuroscience
-  author: Mackevicius EL, Bahle AH, <b>Williams AH</b>, Gu S, Denissenko NI, Goldman MS, Fee MS
+  author: Mackevicius EL*, Bahle AH*, <b>Williams AH</b>, Gu S, Denissenko NI, Goldman MS, Fee MS
   year: 2019
   journal: eLife
   pg: 8:e38471

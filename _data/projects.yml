@@ -3,9 +3,9 @@
     A common paradigm in systems neuroscience is to simultaneously record the
     activity of many neurons over repeated experimental trials (e.g., multiple
     presentations of a sensory stimulus, or a repeated motor action). The resulting
-    datasets can be very large, potentially containing recordings from thousands of
-    neurons over thousands of experimental trials. I'm interested in finding
-    general-purpose statistical approaches for understanding datasets of this form.
+    datasets can be very large, potentially containing thousands of
+    neurons over thousands of trials. I'm interested in finding general-purpose
+    statistical approaches for understanding datasets of this form. 
 - items:
   - name: Tensor Decomposition
     icon: file-pdf-o
@@ -25,7 +25,7 @@
       <a href="https://med.nyu.edu/faculty/dmitry-rinberg" target="_blank">Rinberg</a>,
       <a href="https://shenoy.people.stanford.edu/overview" target="_blank">Shenoy</a>,
       and 
-      <a href="https://olveczkylab.oeb.harvard.edu/" target="_blank">Olveczky</a>,
+      <a href="https://olveczkylab.oeb.harvard.edu/" target="_blank">&Ouml;lveczky</a>,
       labs we demonstrate how to discover precisely timed neural spike patterns in
       the presence of trial-to-trial jitter and other temporal misalignments.
   - name: Tutorial video
@@ -43,7 +43,7 @@
     (for lack of a better term). A more challenging problem is how to extract scientifically
     interpretable features from unstructured neural and behavioral data streams (e.g. during
     unconstrained natural behaviors). To address this, I have developed some models that extract
-    temporal motifs or pseudo-trials from these unannotated time series.
+    temporal motifs or "pseudo-trials" from raw time series.
 
 - items:
   - name: Convolutional NMF
