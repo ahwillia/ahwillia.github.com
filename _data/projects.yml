@@ -5,12 +5,7 @@
     presentations of a sensory stimulus, or a repeated motor action). The resulting
     datasets can be very large, potentially containing recordings from thousands of
     neurons over thousands of experimental trials. I'm interested in finding
-    general-purpose statistical approaches for understanding datasets of this form. See
-    <a href="",
-    target="_blank">Williams et al. (2018)</a> and
-    <a href="https://doi.org/10.1101/661165", target="_blank">Williams et al. (2019)</a>.
-    Also check out <a href="https://www.youtube.com/watch?v=hmmnRF66hOA", target="_blank">
-    this tutorial</a> (from 2017) for a broader overview of this subject.
+    general-purpose statistical approaches for understanding datasets of this form.
 - items:
   - name: Tensor Decomposition
     icon: pdf-o
@@ -33,6 +28,12 @@
       <a href="https://olveczkylab.oeb.harvard.edu/" target="_blank">Olveczky</a>,
       labs we demonstrate how to discover precisely timed neural spike patterns in
       the presence of trial-to-trial jitter and other temporal misalignments.
+  - name: Tutorial video
+    icon: link
+    url: https://www.youtube.com/watch?v=hmmnRF66hOA
+    description: >
+      In this talk (given at MIT, 2017) I give a high level overview of some of the research
+      cited above.
 
 - title: Automated segmentation and detection of motifs in high-dimensional time series
   description: >
