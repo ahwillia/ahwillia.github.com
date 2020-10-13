@@ -17,9 +17,9 @@
                         {{ project.description }}
                     </li>
                     {% if project.items %}
-                    <ul>
+                    <ul style="margin-bottom: 2rem">
                         {% for item in project.items %}
-                        <li>
+                        <li style="margin-bottom: .5rem">
                             <a class="project item" href="{{ item.url }}" target="_blank">
                             <i class="fa fa-fw fa-{{ item.icon }} fa-lg"></i>
                             {{ item.name }}
