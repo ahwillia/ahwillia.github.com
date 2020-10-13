@@ -8,7 +8,7 @@
     general-purpose statistical approaches for understanding datasets of this form.
 - items:
   - name: Tensor Decomposition
-    icon: pdf-o
+    icon: file-pdf-o
     url: https://pyramidal.stanford.edu/publications/Williams2018_Neuron.pdf
     description: >
       In collaboration with experimental groups headed by 
@@ -18,7 +18,7 @@
       we demonstrate how to extract functional neural subpopulations across learning
       and changing environments
   - name: Time Warping
-    icon: pdf-o
+    icon: file-pdf-o
     url: /pdf/2020_timewarp.pdf
     description: >
       In collaboration with
