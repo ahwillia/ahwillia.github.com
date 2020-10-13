@@ -29,7 +29,7 @@
       labs we demonstrate how to discover precisely timed neural spike patterns in
       the presence of trial-to-trial jitter and other temporal misalignments.
   - name: Tutorial video
-    icon: link
+    icon: youtube-square
     url: https://www.youtube.com/watch?v=hmmnRF66hOA
     description: >
       In this talk (given at MIT, 2017) I give a high level overview of some of the research
@@ -37,13 +37,33 @@
 
 - title: Automated segmentation and detection of motifs in high-dimensional time series
   description: >
-    Trial-structured data (described above) are convienent for data analysis---in particular,
+    Trial-structured data (described above) are convienent for data analysis &mdash; in particular,
     if neural dynamics on different trials follow a similar (though not identical) trajectory,
     we can build a model that isolates this structure while discarding the remaining "noise"
     (for lack of a better term). A more challenging problem is how to extract scientifically
     interpretable features from unstructured neural and behavioral data streams (e.g. during
-    unconstrained natural behaviors). I am working on models that extract temporal motifs
-    or pseudo-trials from these unannotated time series. See 
-    <a href="https://doi.org/10.7554/eLife.38471",
-    target="_blank">Mackevicius et al. (2019)</a> and
-    <a href="https://arxiv.org/abs/1907.00139", target="_blank">Degleris et al. (2019)</a>.
+    unconstrained natural behaviors). To address this, I have developed some models that extract
+    temporal motifs or pseudo-trials from these unannotated time series.
+
+- items:
+  - name: Convolutional NMF
+    icon: file-pdf-o
+    url: https://doi.org/10.7554/eLife.38471
+    description: >
+      Led by <a href="https://emackev.github.io/" target="_blank">Emily Mackevicius</a>
+      and <a href="http://web.mit.edu/abahle/www/" target="_blank">Andrew Bahle</a>, we
+      repurposed a convolutional nonnegative matrix factorization (convNMF) model (see
+      <a href="https://doi.org/10.1109/TASL.2006.876726" target="_blank">Smaragdis, 2007</a>)
+      to extract sequential firing patterns in songbirds and rats from unannotated neural population
+      recordings. Thanks also to <a href="https://feelaboratory.org/" target="_blank">Michale Fee</a>
+      and <a href="https://goldmanlab.faculty.ucdavis.edu/" target="_blank">Mark Goldman</a>
+      for guidance and oversight!
+  - name: A Point Process Framework for Sequence Detection
+    icon: file-pdf-o
+    url: https://arxiv.org/pdf/2010.04875.pdf
+    description: >
+      Here we reformulate the convNMF model for spike train data, and in doing so draw a connection to
+      <a href="https://www.jstor.org/stable/2983905" target="_blank">Neyman-Scott point process</a>
+      models. We find that this model is more capable of handling noise in low firing rate regimes
+      than the original convNMF model. We also get better quantification of model uncertainty by performing
+      model inference in a fully Bayesian manner.
