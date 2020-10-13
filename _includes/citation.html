@@ -7,6 +7,9 @@
 </li>
 <li class="author">
     {{ paper.author }} ({{ paper.year }}). <em>{{ paper.journal }}</em>. {{ paper.pg }}
+    {% if paper.award %}
+    <span style="color:#1e90ff">({{ paper.award }})</span>
+    {% endif %}
 </li>
 
 <ul class="list-inline">
