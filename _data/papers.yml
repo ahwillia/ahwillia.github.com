@@ -13,6 +13,12 @@
   journal: bioRxiv preprint
   link: https://doi.org/10.1101/2020.10.05.326942 
 
+- title: Combining tensor decomposition and time warping models for multi-neuronal spike train analysis
+  author: <b>Williams AH</b>
+  year: 2020
+  journal: bioRxiv preprint
+  link: https://doi.org/10.1101/2020.03.02.974014
+
 - title: Thalamic activity patterns unfolding over multiple time scales predict seizure onset in absence epilepsy
   author: Sorokin JM, <b>Williams AH</b>, Ganguli S, Huguenard J
   year: 2020
@@ -47,7 +53,7 @@
 - title: Fast Convolutive Nonnegative Matrix Factorization Through Coordinate and Block Coordinate Updates
   author: Degleris A, Antin B, Ganguli S, <b>Williams AH</b>
   year: 2019
-  journal: arXiv
+  journal: arXiv preprint
   pg: 1907.00139
   link: https://arxiv.org/abs/1907.00139
   github: https://github.com/degleris1/CMF.jl
