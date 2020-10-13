@@ -6,11 +6,33 @@
     datasets can be very large, potentially containing recordings from thousands of
     neurons over thousands of experimental trials. I'm interested in finding
     general-purpose statistical approaches for understanding datasets of this form. See
-    <a href="https://pyramidal.stanford.edu/publications/Williams2018_Neuron.pdf",
+    <a href="",
     target="_blank">Williams et al. (2018)</a> and
     <a href="https://doi.org/10.1101/661165", target="_blank">Williams et al. (2019)</a>.
     Also check out <a href="https://www.youtube.com/watch?v=hmmnRF66hOA", target="_blank">
     this tutorial</a> (from 2017) for a broader overview of this subject.
+items:
+  - name: Tensor Decomposition
+    icon: pdf
+    url: https://pyramidal.stanford.edu/publications/Williams2018_Neuron.pdf
+    description: >
+      In collaboration with experimental groups headed by 
+      <a href="https://shenoy.people.stanford.edu/overview" target="_blank">Krishna Shenoy</a>
+      and 
+      <a href="https://pyramidal.stanford.edu/" target="_blank">Mark Schnitzer</a>
+      we demonstrate how to extract functional neural subpopulations across learning
+      and changing environments
+  - name: Time Warping
+    icon: pdf
+    url: /pdf/2020_timewarp.pdf
+    description: >
+      In collaboration with
+      <a href="https://med.nyu.edu/faculty/dmitry-rinberg" target="_blank">Rinberg</a>,
+      <a href="https://shenoy.people.stanford.edu/overview" target="_blank">Shenoy</a>,
+      and 
+      <a href="https://olveczkylab.oeb.harvard.edu/" target="_blank">Olveczky</a>,
+      labs we demonstrate how to discover precisely timed neural spike patterns in
+      the presence of trial-to-trial jitter and other temporal misalignments.
 
 - title: Automated segmentation and detection of motifs in high-dimensional time series
   description: >
@@ -24,25 +46,3 @@
     <a href="https://doi.org/10.7554/eLife.38471",
     target="_blank">Mackevicius et al. (2019)</a> and
     <a href="https://arxiv.org/abs/1907.00139", target="_blank">Degleris et al. (2019)</a>.
-
-- title: Code
-  description: >
-    I have released a few code packages related to the above research interests.
-  items:
-  - name: tensortools
-    icon: github-square
-    url: http://github.com/ahwillia/tensortools
-    description: >
-      My Python toolbox for fitting tensor decompositions.
-  - name: affinewarp
-    icon: github-square
-    url: http://github.com/ahwillia/tensortools
-    description: >
-      Time warping models for neural data.
-  - name: PyNeuronToolbox
-    icon: github-square
-    url: https://github.com/ahwillia/PyNeuron-Toolbox
-    description: >
-      A package I wrote to enable better <a href="https://www.neuron.yale.edu/neuron/"
-      target="_blank">NEURON</a> simulations in Jupyter notebooks.
-
