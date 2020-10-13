@@ -13,7 +13,7 @@
     this tutorial</a> (from 2017) for a broader overview of this subject.
 - items:
   - name: Tensor Decomposition
-    icon: pdf
+    icon: pdf-o
     url: https://pyramidal.stanford.edu/publications/Williams2018_Neuron.pdf
     description: >
       In collaboration with experimental groups headed by 
@@ -23,7 +23,7 @@
       we demonstrate how to extract functional neural subpopulations across learning
       and changing environments
   - name: Time Warping
-    icon: pdf
+    icon: pdf-o
     url: /pdf/2020_timewarp.pdf
     description: >
       In collaboration with
