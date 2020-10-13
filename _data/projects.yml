@@ -11,7 +11,7 @@
     <a href="https://doi.org/10.1101/661165", target="_blank">Williams et al. (2019)</a>.
     Also check out <a href="https://www.youtube.com/watch?v=hmmnRF66hOA", target="_blank">
     this tutorial</a> (from 2017) for a broader overview of this subject.
-items:
+- items:
   - name: Tensor Decomposition
     icon: pdf
     url: https://pyramidal.stanford.edu/publications/Williams2018_Neuron.pdf
