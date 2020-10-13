@@ -1,3 +1,24 @@
+- title: Point process models for sequence detection in high-dimensional neural spike trains
+  author: <b>Williams AH</b>, Degleris A, Wang Y, Linderman SW
+  year: 2020
+  journal: Neural Information Processing Systems (selected for oral presentation)
+  pg: 105(2):246-259.e8
+  link: https://arxiv.org/abs/2010.04875
+  github: https://github.com/lindermanlab/PPSeq.jl
+  pdf: https://arxiv.org/pdf/2010.04875.pdf
+
+- title: Dynamic and reversible remapping of network representations in an unchanging environment
+  author: Low IIC, <b>Williams AH</b>, Campbell MG, Linderman SW, Giocomo LM
+  year: 2020
+  journal: bioRxiv preprint
+  link: https://doi.org/10.1101/2020.10.05.326942 
+
+- title: Thalamic activity patterns unfolding over multiple time scales predict seizure onset in absence epilepsy
+  author: Sorokin JM, <b>Williams AH</b>, Ganguli S, Huguenard J
+  year: 2020
+  journal: bioRxiv preprint
+  link: https://doi.org/10.1101/2020.03.04.976688
+
 - title: Discovering precise temporal patterns in large-scale neural recordings through robust and interpretable time warping
   author: <b>Williams AH</b>, Poole B, Maheswaranathan N, Dhawale AK, Fisher T, Wilson CD, Brann DH, Trautmann E, Ryu S, Shusterman R, Rinberg D, &Ouml;lveczky BP, Shenoy KV, Ganguli S
   year: 2020
@@ -11,7 +32,7 @@
   author: Maheswaranathan N, <b>Williams AH</b>, Golub MD, Ganguli S, Sussillo D
   year: 2019
   journal: Neural Information Processing Systems
-  pg: Vancouver, CA. (selected for spotlight)
+  pg: Vancouver, CA. (selected for spotlight talk)
   link: https://arxiv.org/abs/1907.08549
   pdf: /pdf/2019_univ_and_indiv.pdf
 
