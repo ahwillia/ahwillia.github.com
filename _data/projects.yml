@@ -37,7 +37,7 @@
 
 - title: Automated segmentation and detection of motifs in high-dimensional time series
   description: >
-    Trial-structured data (described above) are convienent for data analysis &mdash; in particular,
+    Trial-structured data (described above) are convenient for data analysis &mdash; in particular,
     if neural dynamics on different trials follow a similar (though not identical) trajectory,
     we can build a model that isolates this structure while discarding the remaining "noise"
     (for lack of a better term). A more challenging problem is how to extract scientifically
