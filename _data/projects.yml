@@ -44,7 +44,6 @@
     interpretable features from unstructured neural and behavioral data streams (e.g. during
     unconstrained natural behaviors). To address this, I have developed some models that extract
     temporal motifs or "pseudo-trials" from raw time series.
-
 - items:
   - name: Convolutional NMF
     icon: file-pdf-o
@@ -67,3 +66,42 @@
       models. We find that this model is more capable of handling noise in low firing rate regimes
       than the original convNMF model. We also get better quantification of model uncertainty by performing
       model inference in a fully Bayesian manner.
+
+
+- title: Modeling individual variability in biological and model networks
+  description: >
+    Comparative analyses are a well-established approach used in many fields
+    of biology including anatomy, ecology, and cellular physiology. Applying
+    similar approaches in systems-level neuroscience is challenging because we
+    often lack a principled mapping between neurons recorded in different subjects
+    (except in important invertebrate model organisms). However, recent progress
+    has shown that we can often extract population-level statistical features
+    from large-scale neural recording traces, which replicate (at least qualitatively)
+    across subjects (see, e.g.,
+    <a href="https://stat.columbia.edu/~cunningham/pdf/ChurchlandNature2012.pdf", target="_blank">Churchland et al., 2012</a>).
+    I'm interested in developing statistical methods that formalize these observations
+    and using these new tools to perform larger-scale comparative analyses across cohorts
+    containing hundreds of experimental subjects.
+- items:
+  - name: Universality &amp; Individuality in Artificial Networks
+    icon: file-pdf-o
+    url: http://alexhwilliams.info/pdf/2019_univ_and_indiv.pdf
+    description: >
+      I worked with <a href="https://niru.dev/", target="_blank">Niru Maheswaranathan</a>
+      and <a href="https://scholar.google.com/citations?user=ebBgMSkAAAAJ", target="_blank">David Sussillo</a>
+      to study these questions across large populations of trained recurrent neural networks (RNNs).
+      On simple tasks that were amenable to low-dimensional visualization and interpretation,
+      we found that different network architectures (e.g. vanilla RNNs vs. LSTMs) often showed
+      qualitatively similar computational mechanisms (loosely, "universality"). However, we
+      also found differences ("individuality") in the geometric structure of different solutions.
+      We expect that we will need to wrestle with similar outcomes when these comparative
+      analyses are brought to bear on biological data.
+  - name: Distance Metrics for Comparing Neural Representations
+    icon: youtube-square
+    url: https://youtu.be/Lt_Vo-tQcW0
+    description: >
+      I have recently been interested in revisiting some of the foundational approaches
+      to quantifying similarity across neurocomputational systems. I describe some of
+      the high-level ideas in the video above, and I have shared a small code package
+      <a href="https://github.com/ahwillia/netrep" target="_blank">on github</a>.
+      A forthcoming manuscript will provide more details and specifics.
