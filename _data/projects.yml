@@ -49,14 +49,14 @@
     icon: file-pdf-o
     url: https://doi.org/10.7554/eLife.38471
     description: >
-      Led by <a href="https://emackev.github.io/" target="_blank">Emily Mackevicius</a>
-      and <a href="http://web.mit.edu/abahle/www/" target="_blank">Andrew Bahle</a>, we
-      repurposed a convolutional nonnegative matrix factorization (convNMF) model (see
+      In collaboration with <a href="https://emackev.github.io/" target="_blank">Emily Mackevicius</a>,
+      <a href="http://web.mit.edu/abahle/www/" target="_blank">Andrew Bahle</a>, 
+      <a href="https://goldmanlab.faculty.ucdavis.edu/" target="_blank">Mark Goldman</a>,
+      and <a href="https://feelaboratory.org/" target="_blank">Michale Fee</a>, I helped
+      repurpose a convolutional nonnegative matrix factorization (convNMF) model (see
       <a href="https://doi.org/10.1109/TASL.2006.876726" target="_blank">Smaragdis, 2007</a>)
       to extract sequential firing patterns in songbirds and rats from unannotated neural population
-      recordings. Thanks also to <a href="https://feelaboratory.org/" target="_blank">Michale Fee</a>
-      and <a href="https://goldmanlab.faculty.ucdavis.edu/" target="_blank">Mark Goldman</a>
-      for guidance and oversight!
+      recordings. 
   - name: A Point Process Framework for Sequence Detection
     icon: file-pdf-o
     url: https://arxiv.org/pdf/2010.04875.pdf
@@ -65,7 +65,7 @@
       <a href="https://www.jstor.org/stable/2983905" target="_blank">Neyman-Scott point process</a>
       models. We find that this model is more capable of handling noise in low firing rate regimes
       than the original convNMF model. We also get better quantification of model uncertainty by performing
-      model inference in a fully Bayesian manner.
+      parameter inference in a fully Bayesian manner.
 
 
 - title: Modeling individual variability in biological and model networks
