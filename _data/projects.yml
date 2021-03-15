@@ -95,7 +95,9 @@
       qualitatively similar computational mechanisms (loosely, "universality"). However, we
       also found differences ("individuality") in the geometric structure of different solutions.
       We expect that we will need to wrestle with similar outcomes when these comparative
-      analyses are brought to bear on biological data.
+      analyses are brought to bear on biological data. Also see
+      <a href="https://vimeo.com/463740473", target="_blank">this talk from David Sussillo</a>
+      for more details.
   - name: Distance Metrics for Comparing Neural Representations
     icon: youtube-square
     url: https://youtu.be/Lt_Vo-tQcW0
